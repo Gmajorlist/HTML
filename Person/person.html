@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body style="background-color:beige;">
+<form name="personForm" method="post" action="https://www.naver.com">
+<table style="background-color:white;" border="1" cellpadding="5" cellspacing="0">
+	<tr>
+		<th width="70" align="center">이름</th>
+		<td>
+			<input type="text" name="name" placeholder="이름을 입력하세요">
+			<div id="nameDiv"></div>
+		</td>
+	</tr>	
+	<tr>
+		<th width="70" align="center">성별</th>
+		<td>
+			<fieldset>
+			<legend>성별</legend>
+			<input type="radio" name="gender" id="gender_m" value="man"checked="checked">
+			<label for="gender_m">남자</label>
+			&nbsp; <!-- &nbsp; 이거 띄어써줌 -->
+			<input type="radio" name="gender" id="gender_w" value="woman">
+			<label for="gender_w">여자</label>
+			</fieldset>
+		</td>	
+	</tr>
+	<tr>
+		<th width="70" align="center">색깔</th>
+		<td>
+			<select name="color" style="width: 200px;">
+				<!--<optgroup label=""></optgroup> -->
+    			<option value="">색깔 선택</option>
+    			<option value="빨강">빨강</option>
+    			<option value="파랑">파랑</option>
+    			<option value="초록">초록</option>
+    			<option value="노랑">노랑</option>
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<th width="70" align="center">취미</th>
+		<td>
+		 <input type="checkbox" name="hobby" id="hobby_exercise" value="운동" checked />
+		 <label for="hobby_exercise">운동</label>
+		 <input type="checkbox" name="hobby" id="hobby_movie" value="영화" /> 
+		 <label for="hobby_movie">영화</label>
+         <input type="checkbox" name="hobby" id="hobby_music" value="음악" /> 
+         <label for="hobby_music">음악</label>
+         <input type="checkbox" name="hobby" id="hobby_game" value="게임" />
+         <label for="hobby_game">게임</label>
+		 <input type="checkbox" name="hobby" id="hobby_shopping" value="쇼핑" /> 
+		 <label for="hobby_shopping">쇼핑</label>
+		</td>
+	</tr>
+	<tr>
+		<th width="70" align="center">과목</th>
+		<td>
+			<select name="subject" size="5" style="width: 100px;" multiple="multiple">
+				<option value="Java" select="">Java</option>
+				<option value="Servlet">Servlet</option>
+				<option value="JSP">JSP</option>
+				<option value="Spring">Spring</option>
+				
+			
+			</select>
+		</td>
+		
+	</tr>	
+	<tr>
+		<td colspan="2" align="center">
+			<input type="submit" value="SEND">
+			<input type="reset" value="CANCEL">
+		</td>
+	</tr>
+</table>
+</form>
+</body>
+</html>
+
+
+<!-- 운동 <input type="checkbox" name="hobby" value="exercise" checked />
+		영화 <input type="checkbox" name="hobby" value="movie" /> 
+        뮤직 <input type="checkbox" name="hobby" value="music" /> 
+        게임 <input type="checkbox" name="hobby" value="game" />
+		쇼핑 <input type="checkbox" name="hobby" value="shopping" />  -->
