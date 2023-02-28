@@ -30,7 +30,6 @@ public class GuestbookDAO {
 			e.printStackTrace();
 		}	
 	
-	
 	}
 	public void getConnection() {
 		try {
@@ -47,21 +46,6 @@ public class GuestbookDAO {
 			e.printStackTrace();
 		}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }
 	public void guestbookWrite(GuestbookDTO guestbookDTO) {
 		String sql = "insert into guestbook values(seq_guestbook.nextval,?,?,?,?,?,sysdate)";
@@ -70,11 +54,11 @@ public class GuestbookDAO {
 		try {
 			pstmt = conn.prepareStatement(sql);
 			
-			pstmt = setString(1, guestbookDTO.getName());
-			pstmt = setString(2, guestbookDTO.getEmail());
-			pstmt = setString(3, guestbookDTO.getHomepage());
-			pstmt = setString(4, guestbookDTO.getSubject());
-			pstmt = setString(5, guestbookDTO.getContent());
+			pstmt.setString(1, guestbookDTO.getName());
+			pstmt.setString(2, guestbookDTO.getEmail());
+			pstmt.setString(3, guestbookDTO.getHomepage());
+			pstmt.setString(4, guestbookDTO.getSubject());
+			pstmt.setString(5, guestbookDTO.getContent());
 			
 			pstmt.executeUpdate(); //실행
 		} catch (SQLException e) {
@@ -84,10 +68,4 @@ public class GuestbookDAO {
 		}
 		
 	}
-	private PreparedStatement setString(int i, String name) {
-		return null;
-	}
-
-	
-
-	}
+}
