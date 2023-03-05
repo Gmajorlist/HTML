@@ -13,8 +13,9 @@ div {
 }
 </style>
 </head>
-<body>
+<body style="background-color: beige;">
 <form name="loginForm" method="post" action="login.jsp">
+<center>
  <table border="1" cellpadding="5" cellspacing="0">
    <tr>
   	<th>아이디</th>

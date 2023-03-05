@@ -44,7 +44,8 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
+<body style="background-color: beige;">
+<center>
 <%if(su == 0) { %>
 	<h3>회원가입 실패</h3>
 	<input type='button' value='뒤로' onclick='history.go(-1)'>

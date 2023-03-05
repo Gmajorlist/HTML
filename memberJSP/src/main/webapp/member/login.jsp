@@ -17,7 +17,8 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
+<body style="background-color: beige;">
+<center>
 <% if(name == null) { %>
 	<h3>아이디 또는 비밀번호가 맞지 않습니다.</h3>
 	

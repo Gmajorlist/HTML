@@ -13,8 +13,10 @@ div {
 }
 </style>
 </head>
-<body>
+<body style="background-color: beige;">
 <form name="writeForm" method="post" action="write.jsp">
+<center>
+<h1> sign up </h1>
  <table border="1" cellpadding="5" cellspacing="0">
   <tr>
   	<th>이름</th>
