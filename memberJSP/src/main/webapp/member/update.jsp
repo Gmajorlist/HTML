@@ -45,7 +45,15 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
+<body style="background-color:beige">
+<center>
 <h3>회원정보수정 완료!!</h3>
+<script type="text/javascript">
+window.onload=function(){
+	alert("회원정보수정 완료!!")
+	location.href = "loginForm.jsp"
+}
+
+</script>
 </body>
 </html>
