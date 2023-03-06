@@ -13,7 +13,7 @@ div {
 }
 </style>
 </head>
-<body style="background-color: beige;">
+<body style="background-color:beige">
 <form name="loginForm" method="post" action="login.jsp">
 <center>
  <table border="1" cellpadding="5" cellspacing="0">
