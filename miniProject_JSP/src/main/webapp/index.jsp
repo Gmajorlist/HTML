@@ -13,12 +13,12 @@ a:active{color:orange; text-decoration: non;}
 </style>
 </head>
 <body style="background-color:beige">
-<div style="text-align:center;">
 <h3>
-
-<img src="../image/vlvlan.png" width="30" height="30" alt="꽃" 
+<center>
+<img src="./image/vlvlan.png" width="30" height="30" alt="꽃" 
 onclick="location.href='../index.jsp'" style="pointer" >
 </h3>
+<div style="text-align:center;">
 <h2>   메인화면   </h2>
 <h3>
 <% if(session.getAttribute("memId") == null){%>
@@ -32,7 +32,7 @@ onclick="location.href='../index.jsp'" style="pointer" >
 	<a href="./board/boardWriteForm.jsp">글쓰기</a><br>
 <%}%>	
 
-<a href="">목록</a><br>
+<a href="./board/boardList.jsp">목록</a><br>
 
 
 </h3>

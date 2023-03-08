@@ -33,6 +33,11 @@ div#pwdDiv{
 </style>
 </head>
 <body style="background-color:beige">
+<h3>
+<center>
+<img src="../image/vlvlan.png" width="30" height="30" alt="꽃" 
+onclick="location.href='../index.jsp'" style="pointer" >회원탈퇴
+</h3>
 <form name="deleteForm" method="post" action="deleteForm.jsp">
 <div style="text-align: center;">
 	비밀번호 입력 : <input type="password" name="pwd" id="pwd">
@@ -49,7 +54,7 @@ div#pwdDiv{
 <script type="text/javascript">
 window.onload=function(){
 	if(<%=exist%>) alert("참");
-	else alert("거짓");
+	else alert("");
 }
 
 

@@ -5,7 +5,11 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
+
+import board.bean.BoardDTO;
 
 public class BoardDAO {
 	private Connection conn;
@@ -78,6 +82,44 @@ public class BoardDAO {
 		} finally {
 			BoardDAO.close(conn, pstmt);
 		}
+	}
+	
+	public List<BoardDTO> boardList() {
+		List<BoardDTO> list = new ArrayList<BoardDTO>();
+		
+		String sql = "select * from board order by seq desc";
+		
+		getConnection();
+		try {
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();//실행-ResultSet 리턴
+			
+			while(rs.next()) {
+				BoardDTO boardDTO = new BoardDTO();
+				boardDTO.setSeq(rs.getInt("seq"));
+				boardDTO.setId(rs.getString("id"));
+				boardDTO.setName(rs.getString("name"));
+				boardDTO.setEmail(rs.getString("email"));
+				boardDTO.setSubject(rs.getString("subject"));
+				boardDTO.setContent(rs.getString("content"));
+				boardDTO.setRef(rs.getInt("ref"));
+				boardDTO.setLev(rs.getInt("lev"));
+				boardDTO.setStep(rs.getInt("step"));
+				boardDTO.setPseq(rs.getInt("pseq"));
+				boardDTO.setReply(rs.getInt("reply"));
+				boardDTO.setHit(rs.getInt("hit"));
+				boardDTO.setLogtime(rs.getDate("logtime"));
+				
+				list.add(boardDTO);
+			}//while
+		} catch (SQLException e) {
+			e.printStackTrace();
+			list = null;
+		} finally {
+			BoardDAO.close(conn, pstmt, rs);
+		}
+		
+		return list;
 	}
 }
 

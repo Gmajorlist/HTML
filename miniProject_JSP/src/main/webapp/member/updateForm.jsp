@@ -24,6 +24,11 @@ div {
 </style>
 </head>
 <body style="background-color:beige" onload="()">
+<h3>
+<center>
+<img src="../image/vlvlan.png" width="30" height="30" alt="꽃" 
+onclick="location.href='../index.jsp'" style="pointer" >회원정보수정
+</h3>
 <form name="updateForm" method="post" action="update.jsp">
 <center>
  <table border="1" cellpadding="5" cellspacing="0">

@@ -14,6 +14,11 @@ div {
 </style>
 </head>
 <body style="background-color:beige">
+<h3>
+<center>
+<img src="./image/vlvlan.png" width="30" height="30" alt="꽃" 
+onclick="location.href='../index.jsp'" style="pointer" >회원가입
+</h3>
 <form name="writeForm" method="post" action="write.jsp">
  <table border="1" cellpadding="5" cellspacing="0">
 
