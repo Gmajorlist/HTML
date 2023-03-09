@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+div{
+   border: 1px solid red;
+}
+span{
+   border: 1px dotted blue;
+   font-weight: bold;
+   color:#0000ff;
+   font-style:italic;
+   text-decoration:underline;
+}
+</style>
+</head>
+<body>
+<div> <!--한줄영역을 정해줌 width 넓이 height 높이  -->
+	<span>span</span>태그는 <!-- 넓이 높이가 지정안돼  -->
+	<span>문장 단위로 텍스트 영역을 지정하는 것</span>인데,
+	그 자체로는 아무 역할도 하지 않고,
+	문장의 특정 구역에 <span>CSS스타일</span>을 지정할 때 사용합니다.
+</div>
+</body>
+</html>

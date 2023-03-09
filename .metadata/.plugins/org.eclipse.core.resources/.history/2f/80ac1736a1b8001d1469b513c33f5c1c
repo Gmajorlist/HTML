@@ -1,0 +1,56 @@
+package guestbook.service;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import guestbook.bean.GuestbookDTO;
+import guestbook.dao.GuestbookDAO;
+
+@WebServlet("/GuestbookSearchServlet")
+public class GuestbookSearchServlet extends HttpServlet {
+   private static final long serialVersionUID = 1L;
+       
+   protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//      만약, Get방식이면 doGet으로 수정.
+      
+      // 데이터
+      String num = request.getParameter("seq"); 
+      /* 원래 getParameter("num")인데 강사님이 seq로 변경하셔서 ("seq")로 수정. */
+      int seq = 0;
+      if(num != null && !num.equals("")) {
+         seq = Integer.parseInt(num);
+      }
+      
+      // DB
+      GuestbookDAO guestbookDAO = GuestbookDAO.getInstance();
+      GuestbookDTO guestbookDTO = guestbookDAO.guestbookSearch(seq);
+      
+      // 응답
+      response.setContentType("text/html;charset=UTF-8");
+      PrintWriter out = response.getWriter(); // 스트림 생성
+      out.println("<html>");
+      out.println("<body>");
+      out.println("<form>");
+      out.println("<table border='1' cellpadding='5' cellspacing='0'>");
+      if(guestbookDTO != null) {
+         out.println("<tr><td>작성자</td><td>" + guestbookDTO.getName() + "</td></tr>");
+         out.println("<tr><td>이메일</td><td>" + guestbookDTO.getEmail() + "</td></tr>");
+         out.println("<tr><td>홈페이지</td><td>" + guestbookDTO.getHomepage() + "</td></tr>");
+         out.println("<tr><td>제목</td><td>" + guestbookDTO.getSubject() + "</td></tr>");
+         out.println("<tr><td>내용</td><td>" + guestbookDTO.getContent() + "</td></tr>");
+      } else { /* null값으로 나와 보완 필요......... */
+         out.println("<tr><td colspan='2'>찾을 수 없는 방명록입니다.</td></tr>");
+      }
+      out.println("</table>");
+      out.println("</form>");
+      out.println("</body>");
+      out.println("</html>");
+   }
+   
+}

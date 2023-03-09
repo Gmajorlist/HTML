@@ -1,0 +1,40 @@
+
+2월 22, 2023 16:41:45.63 NEW SESSION
+2월 22, 2023 16:41:45.63 [7064:7204:0222/164145.061:ERROR:interface_endpoint_client.cc(695)] Message 1 rejected by interface blink.mojom.WidgetHost
+2월 23, 2023 13:24:25.946 [12372:8808:0223/132425.946:ERROR:connection_factory_impl.cc(472)] ConnectionHandler failed with net error: -2
+2월 23, 2023 13:37:23.445 [12372:8808:0223/133723.444:ERROR:connection_factory_impl.cc(427)] Failed to connect to MCS endpoint with error -106
+2월 23, 2023 13:37:27.197 [12372:13880:0223/133723.445:ERROR:get_updates_processor.cc(264)] PostClientToServerMessage() failed during GetUpdates with error 2
+2월 23, 2023 14:12:47.736 [12372:8808:0223/141247.736:ERROR:connection_factory_impl.cc(472)] ConnectionHandler failed with net error: -2
+2월 23, 2023 17:54:07.33 [856:3716:0223/175407.033:ERROR:interface_endpoint_client.cc(695)] Message 1 rejected by interface blink.mojom.WidgetHost
+
+2월 24, 2023 15:47:20.246 NEW SESSION
+2월 24, 2023 15:47:20.247 [2900:11192:0224/154720.246:ERROR:interface_endpoint_client.cc(695)] Message 5 rejected by interface blink.mojom.WidgetHost
+2월 24, 2023 18:39:27.863 [11464:11036:0224/183927.862:ERROR:connection_factory_impl.cc(472)] ConnectionHandler failed with net error: -2
+2월 27, 2023 09:18:40.835 [11464:11036:0227/091840.835:ERROR:connection_factory_impl.cc(472)] ConnectionHandler failed with net error: -2
+2월 27, 2023 09:18:45.323 [11464:11036:0227/091842.848:ERROR:connection_factory_impl.cc(427)] Failed to connect to MCS endpoint with error -106
+2월 27, 2023 09:18:45.323 [11464:11036:0227/091842.848:ERROR:checkin_request.cc(240)] Check-in request got net error: -106
+2월 27, 2023 09:18:45.323 [11464:8728:0227/091842.848:ERROR:get_updates_processor.cc(264)] PostClientToServerMessage() failed during GetUpdates with error 2
+2월 27, 2023 09:18:45.323 [11464:11036:0227/091843.353:ERROR:connection_factory_impl.cc(427)] Failed to connect to MCS endpoint with error -106
+2월 28, 2023 09:28:26.933 [11464:6072:0228/092826.933:ERROR:interface_endpoint_client.cc(695)] Message 1 rejected by interface blink.mojom.WidgetHost
+
+3월 02, 2023 16:14:35.641 NEW SESSION
+3월 02, 2023 16:14:35.641 [5736:13448:0302/161435.640:ERROR:interface_endpoint_client.cc(695)] Message 1 rejected by interface blink.mojom.WidgetHost
+3월 02, 2023 22:22:46.775 [7492:10836:0302/222246.775:ERROR:connection_factory_impl.cc(472)] ConnectionHandler failed with net error: -2
+3월 03, 2023 15:14:55.845 [4304:7948:0303/151455.845:ERROR:interface_endpoint_client.cc(695)] Message 1 rejected by interface blink.mojom.WidgetHost
+
+3월 08, 2023 14:10:39.547 NEW SESSION
+3월 08, 2023 14:10:39.547 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+
+3월 09, 2023 09:56:22.905 NEW SESSION
+3월 09, 2023 09:56:22.905 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+3월 09, 2023 10:08:23.153 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+3월 09, 2023 10:09:28.442 [992:6296:0309/100928.442:ERROR:interface_endpoint_client.cc(695)] Message 0 rejected by interface blink.mojom.WidgetHost
+3월 09, 2023 10:12:51.862 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+3월 09, 2023 11:23:50.558 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+3월 09, 2023 11:25:19.581 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+3월 09, 2023 11:54:42.572 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+3월 09, 2023 11:55:37.948 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+3월 09, 2023 12:00:29.265 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+3월 09, 2023 12:38:06.329 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+3월 09, 2023 12:49:55.744 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+3월 09, 2023 17:03:54.590 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.

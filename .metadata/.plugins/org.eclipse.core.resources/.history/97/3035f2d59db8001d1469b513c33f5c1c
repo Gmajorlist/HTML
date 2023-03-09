@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+#seqDiv { /*#은 seqDiv에만 속성을 먹히게 하겠다  */
+   color: red;
+   font-size: 8pt;
+   font-weight: bold;
+}
+</style>
+</head>
+<body style="background-color: white;">
+<form name="guestbookSearchForm" method="post" action="/guestbookServlet/GuestbookSearchServlet">
+<div>
+글번호 입력 : <input type="text" name="seq" id="seq" >
+<input type="button" value="검색" onclick="search()">
+<div id="seqDiv" style = "border: 1px solid blue;"></div>
+</div>    <!--SUBMIT은 그냥 넘어가서 BUTTON으로함  -->
+</form>
+<script type="text/javascript">
+function search() {
+   document.getElementById("numDiv").innerText = "";
+   
+   if(document.getElementById("num").value == "")
+      document.getElementById("numDiv").innerText = "찾을 수 없는 방영록입니다.";
+   
+   else
+      document.guestbookSearchForm.submit();
+}
+</script>
+</body>
+</html>

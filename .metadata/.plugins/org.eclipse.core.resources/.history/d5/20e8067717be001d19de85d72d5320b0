@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style text="text/css">
+p{
+	border: 1px solid blue;
+}
+</style>
+</head>
+<body>
+<!-- 이미지 태그 사용법  -->
+		<p style="border: 1px solid red;"><!-- 안에 넣으면 우선권! 비추천  -->
+			<img src="../img/vlvlan.png" alt="분홍"/>
+		</p>
+
+<!-- 이미지 태그 사용법  -->
+		<p style="border: 1px solid red;"><!-- 안에 넣으면 우선권! 비추천  -->
+			<img src="../img/vlvlan.png" width="30" height="30"  alt="분홍"/>
+		</p>
+
+		
+		<p>
+			<a href="https://www.naver.com"><img alt="분홍" src="../img/vlvlan.png"></a>
+		
+		</p>
+</body>
+</html>

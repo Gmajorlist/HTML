@@ -1,0 +1,22 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import ="member.dao.MemberDAO"  %>
+<%
+	//데이터
+	//String id = (String)session.getAttribute("memId");
+	String pwd = request.getParameter("pwd"); // 넘어온 데이터
+	System.out.println("pw = " + pwd);
+	//DB
+	MemberDAO memberDAO = MemberDAO.getInstance();
+	//boolean exist = memberDAO.isExistPwd(pwd); // 비밀번호가 있으면 True, 없으면 false
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

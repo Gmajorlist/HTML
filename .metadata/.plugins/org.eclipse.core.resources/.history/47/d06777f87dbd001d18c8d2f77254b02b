@@ -1,0 +1,29 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body style="background-color:beige">
+<h3>
+<center>
+<img src="../image/vlvlan.png" width="30" height="30" alt="꽃" 
+onclick="location.href='../index.jsp'" style="pointer" >목록
+</h3>
+<table border="1" width="500px" align="center">
+	<tr>
+		<th>글번호</th>
+		<th>제목</th>
+		<th>작성자</th>
+		<th>조회수</th>
+		<th>작성일</th>
+	</tr>
+	
+
+
+
+</table>
+</body>
+</html>

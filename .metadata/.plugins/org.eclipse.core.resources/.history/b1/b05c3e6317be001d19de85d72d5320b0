@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style text="text/css">
+p{
+	border: 1px solid blue;
+}
+</style>
+</head>
+<body>
+<!-- 이미지 태그 사용법  -->
+		<p style="border: 1px solid red;">
+			<img src="../img/vlvlan.png" alt="분홍"/>
+		</p>
+
+
+
+</body>
+</html>
