@@ -32,7 +32,7 @@ onclick="location.href='../index.jsp'" style="pointer" >
 	<a href="./board/boardWriteForm.jsp">글쓰기</a><br>
 <%}%>	
 
-<a href="./board/boardList.jsp">목록</a><br>
+<a href="./board/boardList.jsp?pg=1">목록</a><br>
 
 
 </h3>

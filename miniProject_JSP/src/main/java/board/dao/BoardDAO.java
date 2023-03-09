@@ -9,17 +9,24 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.sql.DataSource;
+
 import board.bean.BoardDTO;
 
 public class BoardDAO {
 	private Connection conn;
 	private PreparedStatement pstmt;
 	private ResultSet rs;
+	private DataSource ds;
 	
-	private String driver = "oracle.jdbc.driver.OracleDriver";
-	private String url = "jdbc:oracle:thin:@localhost:1521:xe";
-	private String username = "C##JAVA";
-	private String password = "1234";
+	
+//	private String driver = "oracle.jdbc.driver.OracleDriver";
+//	private String url = "jdbc:oracle:thin:@localhost:1521:xe";
+//	private String username = "C##JAVA";
+//	private String password = "1234";
 	
 	private static BoardDAO boardDAO = new BoardDAO();
 	
@@ -48,25 +55,21 @@ public class BoardDAO {
 	
 	public BoardDAO() {
 		try {
-			Class.forName(driver); //Class타입으로 생성
-		} catch (ClassNotFoundException e) {
+			Context ctx = new InitialContext(); //생성
+			ds = (DataSource)ctx.lookupLink("java:comp/env/jdbc/oracle"); //Tomcat의 경우일때java:comp/env이거 붙여라
+		} catch (NamingException e) {
 			e.printStackTrace();
-		}
+		} 
 	}
 	
-	public void getConnection() {
-		try {
-			conn = DriverManager.getConnection(url, username, password);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}                                             
-	}
+
+	               
 	
 	public void boardWrite(Map<String, String> map) {
 		String sql = "insert into board(seq,id,name,email,subject,content,ref)"
 				+ " values(seq_board.nextval,?,?,?,?,?,seq_board.currval)";
 		
-		getConnection();
+	
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, map.get("id"));
@@ -89,8 +92,9 @@ public class BoardDAO {
 		
 		String sql = "select * from board order by seq desc";
 		
-		getConnection();
+		
 		try {
+			conn = ds.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();//실행-ResultSet 리턴
 			
@@ -120,6 +124,25 @@ public class BoardDAO {
 		}
 		
 		return list;
+	}
+	public int getTotalA() {
+		int totalA =0;
+		String sql = "select count(*) from board";
+		
+		try {
+			conn = ds.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			
+			rs.next();
+			totalA = rs.getInt(1);
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}finally {
+			BoardDAO.close(conn, pstmt);
+		}
+		return totalA;
 	}
 }
 

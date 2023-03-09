@@ -6,17 +6,23 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.sql.DataSource;
+
 import member.bean.MemberDTO;
 
 public class MemberDAO {
 	private Connection conn;
 	private PreparedStatement pstmt;
 	private ResultSet rs;
+	private DataSource ds;
 	
-	private String driver = "oracle.jdbc.driver.OracleDriver";
-	private String url = "jdbc:oracle:thin:@localhost:1521:xe";
-	private String username = "C##JAVA";
-	private String password = "1234";
+//	private String driver = "oracle.jdbc.driver.OracleDriver";
+//	private String url = "jdbc:oracle:thin:@localhost:1521:xe";
+//	private String username = "C##JAVA";
+//	private String password = "1234";
 	
 	private static MemberDAO memberDAO = new MemberDAO();
 	
@@ -44,27 +50,29 @@ public class MemberDAO {
 
 	public MemberDAO() {
 		try {
-			Class.forName(driver); //Class타입으로 생성
-		} catch (ClassNotFoundException e) {
+			Context ctx = new InitialContext(); //생성
+			ds = (DataSource)ctx.lookupLink("java:comp/env/jdbc/oracle");
+		} catch (NamingException e) {
 			e.printStackTrace();
-		}
+		} 
 	}
 	
-	public void getConnection() {
-		try {
-			conn = DriverManager.getConnection(url, username, password);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}                                             
-	}
+//	public void getConnection() {
+//		try {
+//			conn = DriverManager.getConnection(url, username, password);
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		}                                             
+//	}
 	
 	public int memberWrite(MemberDTO memberDTO) {
 		int su = 0;
 		
-		this.getConnection(); //접속
+		
 		String sql = "insert into member values(?,?,?,?,?,?,?,?,?,?,?,?,sysdate)";
 		
 		try {
+			conn = ds.getConnection();
 			pstmt = conn.prepareStatement(sql);//생성
 			
 			//?에 데이터 주입
@@ -96,8 +104,9 @@ public class MemberDAO {
 		MemberDTO memberDTO = null;
 		
 		String sql = "SELECT * FROM MEMBER where id=? and pwd=?";
-		getConnection(); //접속
+	 
 		try {
+			conn = ds.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, id);
 			pstmt.setString(2, pwd);
@@ -123,8 +132,8 @@ public class MemberDAO {
 		MemberDTO memberDTO = null;
 		String sql = "select * from member where id=?";
 		
-		getConnection();
 		try {
+			conn = ds.getConnection();
 			pstmt = conn.prepareStatement(sql);//생성
 			pstmt.setString(1, id);
 			rs = pstmt.executeQuery(); //ResultSet 리턴
@@ -169,8 +178,9 @@ public class MemberDAO {
 								   + ", logtime=sysdate"
 								   + " where id=?";
 		
-		getConnection();
+		
 		try {
+			conn = ds.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, memberDTO.getName());
 			pstmt.setString(2, memberDTO.getPwd());
@@ -198,8 +208,9 @@ public class MemberDAO {
 		boolean exist = false;
 		String sql = "select * from member where id=? and pwd=?";
 		
-		getConnection();
+		
 		try {
+			conn = ds.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, id);
 			pstmt.setString(2, pwd);
@@ -220,8 +231,9 @@ public class MemberDAO {
 	public void memberDelete(String id) {
 		String sql = "delete member where id=?";
 		
-		getConnection();
+	
 		try {
+			conn = ds.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, id);
 			
