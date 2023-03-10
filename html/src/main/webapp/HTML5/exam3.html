@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form action=""
+	oninput="total.value=parseInt(value01.value)/parseInt(value02.value)">
+	<input type="number" id="value01" name="value01" value="20"> <!-- parseInt 가지고있는걸 정수형으로 바꿔줌  -->
+	/
+	( 0 
+	<input type="range" id="value02" name="value02" value="50" min="0" max="100"> <!--  range 범위를 나타남 -->
+	100 )
+	=
+	<output name="total" for="value01 value02"></output><br><br>
+	<input type="submit" value="전송">
+
+
+
+</form>
+</body>
+</html>
+<!-- 
+for 속성을 사용하여 해당 결과에 영향을 줄 수 있는 HTML 문서 내의 요소를 명시할 수 있다.
+ -->
