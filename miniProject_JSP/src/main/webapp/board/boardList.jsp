@@ -13,7 +13,8 @@
 int pg = Integer.parseInt(request.getParameter("pg"));
 
 Map<String, Integer>map = new HashMap<String, Integer>();
-
+//세션
+String memId = (String)session.getAttribute("memId");
 //1페이지당 5개씩
 int endNum = pg*5;
 int startNum = endNum -4;
@@ -49,8 +50,8 @@ map.put("endNum", endNum);
 .subjectA:active{color:orange; text-decoration: non;}
 #currentPaging{
 	color:green;
-	border:1px solid red;
-	padding: 5px 8px;  /*top  bottom ///   left right   */
+	border:0px solid pink;
+	padding: 1px ;  /*top  bottom ///   left right   */
 	margin: 5px; /*top right bottom left   */
 	cursor: pointer;
 }
@@ -82,7 +83,7 @@ onclick="location.href='../index.jsp'" style="pointer" >목록
 	<%for(BoardDTO boardDTO : list){ %>
 		<tr>
 			<td align="center"><%=boardDTO.getSeq() %></td>
-			<td><a class="subjectA" href=""><%=boardDTO.getSubject() %></a></td>
+			<td><a class="subjectA" href="#" onclick="isLogin('<%=memId %>',<%=boardDTO.getSeq()%>,<%=pg %>)"><%=boardDTO.getSubject() %></a></td>
 			<td align="center"><%=boardDTO.getId()%></td>
 			<td align="center"><%=boardDTO.getHit()%></td>
 			<td align="center">
@@ -99,8 +100,13 @@ onclick="location.href='../index.jsp'" style="pointer" >목록
 function boardPaging(pg){
 	location.href = "boardList.jsp?pg=" +pg;
 }
-</script>
 
- 
+function isLogin(memId, seq){
+	alert(memId +", " + seq)
+	if(memId == 'null') alert("먼저 로그인해")
+	else
+		location.href="boardView.jsp?seq=" +seq + "&pg" + pg;
+}
+</script>
 </body>
 </html>
