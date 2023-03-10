@@ -16,7 +16,7 @@ a:active{color:orange; text-decoration: non;}
 <h3>
 <center>
 <img src="./image/vlvlan.png" width="30" height="30" alt="꽃" 
-onclick="location.href='../index.jsp'" style="pointer" >
+onclick="location.href='./index.jsp'" style="pointer" >
 </h3>
 <div style="text-align:center;">
 <h2>   메인화면   </h2>

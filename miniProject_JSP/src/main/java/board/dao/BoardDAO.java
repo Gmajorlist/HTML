@@ -22,7 +22,6 @@ public class BoardDAO {
 	private ResultSet rs;
 	private DataSource ds;
 	
-	
 //	private String driver = "oracle.jdbc.driver.OracleDriver";
 //	private String url = "jdbc:oracle:thin:@localhost:1521:xe";
 //	private String username = "C##JAVA";
@@ -56,13 +55,11 @@ public class BoardDAO {
 	public BoardDAO() {
 		try {
 			Context ctx = new InitialContext(); //생성
-			ds = (DataSource)ctx.lookupLink("java:comp/env/jdbc/oracle"); //Tomcat의 경우일때java:comp/env이거 붙여라
+			ds = (DataSource)ctx.lookup("java:comp/env/jdbc/oracle"); //Tomcat의 경우일때java:comp/env이거 붙여라
 		} catch (NamingException e) {
 			e.printStackTrace();
 		} 
 	}
-	
-
 	               
 	
 	public void boardWrite(Map<String, String> map) {
@@ -71,6 +68,8 @@ public class BoardDAO {
 		
 	
 		try {
+			conn = ds.getConnection();
+			
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, map.get("id"));
 			pstmt.setString(2, map.get("name"));
@@ -78,7 +77,7 @@ public class BoardDAO {
 			pstmt.setString(4, map.get("subject"));
 			pstmt.setString(5, map.get("content"));
 			
-			pstmt.executeUpdate();//실행 - 개수 리턴
+			pstmt.executeUpdate();
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -87,15 +86,21 @@ public class BoardDAO {
 		}
 	}
 	
-	public List<BoardDTO> boardList() {
+	public List<BoardDTO> boardList(Map<String, Integer>map) {
 		List<BoardDTO> list = new ArrayList<BoardDTO>();
 		
-		String sql = "select * from board order by seq desc";
+		String sql = "select * from "
+						+"(select rownum rn,tt.* from "
+						+"(select * from board order by ref desc, step asc) tt)"
+						 +"where rn >=? and rn<=?";
 		
 		
 		try {
 			conn = ds.getConnection();
+			
 			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, map.get("startNum"));
+			pstmt.setInt(2, map.get("endNum"));
 			rs = pstmt.executeQuery();//실행-ResultSet 리턴
 			
 			while(rs.next()) {
