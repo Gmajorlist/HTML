@@ -1,64 +1,55 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import ="member.dao.MemberDAO"  %>
+<%@ page import="member.dao.MemberDAO" %>
+
 <%
 	//데이터
-	String pwd = request.getParameter("pwd"); // 넘어온 데이터
-	System.out.println("pw = " + pwd);
+	String pwd = request.getParameter("pwd"); //넘어온 데이터
+	System.out.println("pwd = " + pwd); // 맨처음에는 pwd가 null
 	
 	//세션
 	String id = (String)session.getAttribute("memId");
-	String mempwd = (String)session.getAttribute("mempwd");
+	String memPwd = (String)session.getAttribute("memPwd");
+
 	//DB
 	boolean exist = false;
 	if(pwd != null){
 		//MemberDAO memberDAO = MemberDAO.getInstance();
-		//exist = memberDAO.isExistPwd(id, pwd); // 비밀번호가 있으면 True, 없으면 false
+		//exist = memberDAO.isExistPwd(id, pwd); //비밀번호가 있으면 true, 없으면 false
+		
+		if(memPwd.equals(pwd)) exist = true;
 	}
 	
 	if(exist) response.sendRedirect("delete.jsp");
-	
-	
 %>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
-div#pwdDiv{
+div#pwdDiv {
 	color: red;
-	front-weight: bold;
+	font-weight: bold;
 }
 </style>
 </head>
-<body style="background-color:beige">
-<h3>
-<center>
-<img src="../image/vlvlan.png" width="30" height="30" alt="꽃" 
-onclick="location.href='../index.jsp'" style="pointer" >회원탈퇴
-</h3>
+<body>
 <form name="deleteForm" method="post" action="deleteForm.jsp">
-<div style="text-align: center;">
-	비밀번호 입력 : <input type="password" name="pwd" id="pwd">
-	<input type="button" value="검색" onclick="checkDelete()">
-	<br><br>
-	<div id="pwdDiv">
-		<%if(pwd != null && !exist){%>
-			비밀번호가 맞지 않습니다.
-		<%}%>
+	<div style="text-align: center;">
+		비밀번호 입력 : <input type="password" name="pwd" id="pwd">
+		<input type="button" value="검색" onclick="checkDelete()">
+		<br><br>
+		<div id="pwdDiv">
+			<%if(pwd != null && !exist ){ %>
+				비밀번호가 맞지 않습니다.
+			<%} %>
+		</div>
 	</div>
-</div>
 </form>
 
 <script type="text/javascript">
-window.onload=function(){
-	if(<%=exist%>) alert("참");
-	else alert("");
-}
-
-
-
 function checkDelete(){
 	document.getElementById("pwdDiv").innerText = "";
 	
@@ -66,9 +57,16 @@ function checkDelete(){
 		document.getElementById("pwdDiv").innerText = "먼저 비밀번호를 입력하시오";
 	else
 		document.deleteForm.submit();
-
-}1
-
+}
 </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+

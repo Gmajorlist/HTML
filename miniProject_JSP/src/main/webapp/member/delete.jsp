@@ -1,18 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import ="member.dao.MemberDAO"  %>
+<%@ page import="member.dao.MemberDAO" %>
+
 <%
 	//데이터
 	String id = (String)session.getAttribute("memId");
-	
-	//세션
-	session.invalidate(); //무효화
 
+	//세션
+	//session.removeAttribute("memName");
+	//session.removeAttribute("memId");
+	
+	session.invalidate(); //무효화
+	
 	//DB
 	MemberDAO memberDAO = MemberDAO.getInstance();
-	memberDAO.memberDelete(id); // 비밀번호가 있으면 True, 없으면 false
-	
-	
+	memberDAO.memberDelete(id);
 %>
 <!DOCTYPE html>
 <html>
@@ -21,11 +23,25 @@
 <title>Insert title here</title>
 </head>
 <body>
+
 <script type="text/javascript">
 window.onload=function(){
-	alert("회원탈퇴 완료 !!");
+	alert("회원탈퇴 완료!!");
 	location.href = "loginForm.jsp";
 }
 </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,12 +1,12 @@
 CREATE TABLE board(
      seq NUMBER NOT NULL,               -- 글번호 (시퀀스 객체 이용)
-     id VARCHAR2(20) NOT NULL,          -- 아이디
-     name VARCHAR2(40) NOT NULL,        -- 이름
-     email VARCHAR2(40),                -- 이메일
+     id VARCHAR2(20) NOT NULL,          -- 아이디		memId
+     name VARCHAR2(40) NOT NULL,        -- 이름		memName
+     email VARCHAR2(40),                -- 이메일		memEmail
      subject VARCHAR2(255) NOT NULL,    -- 제목
      content VARCHAR2(4000) NOT NULL,   -- 내용 
 
-     ref NUMBER NOT NULL,               -- 그룹번호
+     ref NUMBER NOT NULL,               -- 그룹번호	seq와 같은 번호
      lev NUMBER DEFAULT 0 NOT NULL,     -- 단계
      step NUMBER DEFAULT 0 NOT NULL,    -- 글순서
      pseq NUMBER DEFAULT 0 NOT NULL,    -- 원글번호

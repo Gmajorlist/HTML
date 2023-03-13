@@ -17,12 +17,8 @@ public class MemberDAO {
 	private Connection conn;
 	private PreparedStatement pstmt;
 	private ResultSet rs;
-	private DataSource ds;
 	
-//	private String driver = "oracle.jdbc.driver.OracleDriver";
-//	private String url = "jdbc:oracle:thin:@localhost:1521:xe";
-//	private String username = "C##JAVA";
-//	private String password = "1234";
+	private DataSource ds;
 	
 	private static MemberDAO memberDAO = new MemberDAO();
 	
@@ -51,28 +47,23 @@ public class MemberDAO {
 	public MemberDAO() {
 		try {
 			Context ctx = new InitialContext(); //생성
-			ds = (DataSource)ctx.lookupLink("java:comp/env/jdbc/oracle");
+			ds = (DataSource) ctx.lookup("java:comp/env/jdbc/oracle");//Tomcat인 경우에는 java:comp/env/ 붙여야 한다.  
+			
 		} catch (NamingException e) {
 			e.printStackTrace();
-		} 
+		}
 	}
 	
-//	public void getConnection() {
-//		try {
-//			conn = DriverManager.getConnection(url, username, password);
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//		}                                             
-//	}
+	
 	
 	public int memberWrite(MemberDTO memberDTO) {
 		int su = 0;
-		
 		
 		String sql = "insert into member values(?,?,?,?,?,?,?,?,?,?,?,?,sysdate)";
 		
 		try {
 			conn = ds.getConnection();
+
 			pstmt = conn.prepareStatement(sql);//생성
 			
 			//?에 데이터 주입
@@ -104,9 +95,10 @@ public class MemberDAO {
 		MemberDTO memberDTO = null;
 		
 		String sql = "SELECT * FROM MEMBER where id=? and pwd=?";
-	 
+		
 		try {
 			conn = ds.getConnection();
+			
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, id);
 			pstmt.setString(2, pwd);
@@ -134,6 +126,7 @@ public class MemberDAO {
 		
 		try {
 			conn = ds.getConnection();
+			
 			pstmt = conn.prepareStatement(sql);//생성
 			pstmt.setString(1, id);
 			rs = pstmt.executeQuery(); //ResultSet 리턴
@@ -181,6 +174,7 @@ public class MemberDAO {
 		
 		try {
 			conn = ds.getConnection();
+			
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, memberDTO.getName());
 			pstmt.setString(2, memberDTO.getPwd());
@@ -208,9 +202,9 @@ public class MemberDAO {
 		boolean exist = false;
 		String sql = "select * from member where id=? and pwd=?";
 		
-		
 		try {
 			conn = ds.getConnection();
+			
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, id);
 			pstmt.setString(2, pwd);
@@ -231,9 +225,9 @@ public class MemberDAO {
 	public void memberDelete(String id) {
 		String sql = "delete member where id=?";
 		
-	
 		try {
 			conn = ds.getConnection();
+			
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, id);
 			
@@ -245,22 +239,27 @@ public class MemberDAO {
 			MemberDAO.close(conn, pstmt);
 		}
 	}
-	public  boolean isExistId(String id) {
+	
+	public boolean isExistId(String id) {
 		boolean existId = false;
 		String sql = "select * from member where id=?";
 		
 		try {
 			conn = ds.getConnection();
+			
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, id);
-			rs= pstmt.executeQuery();
+			
+			rs = pstmt.executeQuery();
 			
 			if(rs.next()) existId = true;
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}finally {
-			MemberDAO.close(conn, pstmt,rs);
+		} finally {
+			MemberDAO.close(conn, pstmt, rs);
 		}
+		
 		return existId;
 	}
 }

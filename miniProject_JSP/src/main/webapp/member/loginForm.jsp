@@ -13,14 +13,12 @@ div {
 }
 </style>
 </head>
-<body style="background-color:beige">
+<body>
 <h3>
-<center>
-<img src="../image/vlvlan.png" width="30" height="30" alt="꽃" 
-onclick="location.href='../index.jsp'" style="pointer" >로그인
+<img src="../image/3.gif" width="70" height="70" alt="망상토끼" 
+onclick="location.href='../index.jsp'" style="cursor: pointer;"> 로그인
 </h3>
 <form name="loginForm" method="post" action="login.jsp">
-<center>
  <table border="1" cellpadding="5" cellspacing="0">
    <tr>
   	<th>아이디</th>

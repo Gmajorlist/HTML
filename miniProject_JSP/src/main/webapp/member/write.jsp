@@ -19,7 +19,7 @@
 	String zipcode = request.getParameter("zipcode");
 	String addr1 = request.getParameter("addr1");
 	String addr2 = request.getParameter("addr2");
-	 
+	
 	MemberDTO memberDTO = new MemberDTO();
 	memberDTO.setName(name);
 	memberDTO.setId(id);

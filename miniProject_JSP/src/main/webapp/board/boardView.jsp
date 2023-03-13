@@ -1,15 +1,16 @@
-<%@page import="board.dao.BoardDAO"%>
-<%@page import="board.bean.BoardDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="board.bean.BoardDTO"%>
+<%@ page import="board.dao.BoardDAO"%>
+
 <%
-//데이터
-int seq = Integer.parseInt(request.getParameter("seq"));
-int pg = Integer.parseInt(request.getParameter("pg"));
-//DB
+	//데이터
+	int seq = Integer.parseInt(request.getParameter("seq"));
+	int pg = Integer.parseInt(request.getParameter("pg"));
+	
+	//DB
 	BoardDAO boardDAO = BoardDAO.getInstance();
 	BoardDTO boardDTO = boardDAO.getBoard(seq);
-
 %>
 <!DOCTYPE html>
 <html>
@@ -26,35 +27,46 @@ div{
 </head>
 <body>
 <%if(boardDTO != null){ %>
-<form name="boardWriteForm" method="post" action="">
-	<h3>
-		<img src="../image/vlvlan.png" width="30" height="30" alt="안녕" 
-		onclick="location.href='../index.jsp'" style="cursor: pointer;"> 작성한 글확인
-	</h3>
-	<table width="450" border="2" cellpadding="5" cellspacing="0" fram="hside" rules="rows">
-		<tr><!--white -space 먹힐려면 테이블에서 넚이를 잡아줘야합니다  -->
+	<form name="boardViewForm" method="post" action="">
+		<h3>
+			<img src="../image/3.gif" width="70" height="70" alt="망상토끼" 
+			onclick="location.href='../index.jsp'" style="cursor: pointer;"> 작성한 글확인
+		</h3>
+		<table width="450" border="2" cellpadding="5" cellspacing="0" frame="hsides" rules="rows">
+			<tr>
+				<td colspan="3">
+					<h2><%=boardDTO.getSubject() %></h2>
+				</td>
+			</tr>
 			
-			<td colspan=3>
-				<h2<%=boardDTO.getSubject()%>"></h2>
-				
-			</td>
-		</tr>
-		<tr>
-			<td width="150" align="center">글번호 :<%=boardDTO.getSubject()%></td>
-			<td width="150" align="center">작성자 :<%=boardDTO.getSubject()%></td>
-			<td width="150" align="center">조회수 :<%=boardDTO.getSubject()%></td>
-		</tr>	
-		
-		<tr>
-			<td colspan="3" height="250" valign="top">
-				<div style="width:100%, hiught: 100%; overflow: auto; " >
-					<pre style="white-space: pre-line; word-break: break-all;"><%=boardDTO.getSubject()%></pre>
-				</div>
-			</td>
-		</tr>
-	</table>
-	<input type="button" value="목록" onclick="history.go(-1)">
-</form>
+			<tr>
+				<td width="150" align="center">글번호 : <%=boardDTO.getSeq() %></td>
+				<td width="150" align="center">작성자 : <%=boardDTO.getId() %></td>
+				<td width="150" align="center">조회수 : <%=boardDTO.getHit() %></td>
+			</tr>
+			
+			<tr>
+				<td colspan="3" height="250" valign="top">
+					<div style="width: 100%; height: 100%; overflow: auto;"> <!-- 밑으로 긴 글일때 스크롤바가 뜨게 -->
+						<pre style="white-space: pre-line; word-break: break-all;">
+							<%=boardDTO.getContent() %>
+						</pre>
+					</div>
+				</td>
+			</tr>
+		</table>
+		<input type="button" value="목록" onclick="history.go(-1)">
+	</form>
 <%} %>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+

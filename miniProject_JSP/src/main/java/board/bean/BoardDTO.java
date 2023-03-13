@@ -7,7 +7,6 @@ import lombok.Setter;
 
 @Getter
 @Setter
-
 public class BoardDTO {
 	private int seq;
 	private String id;
@@ -22,4 +21,5 @@ public class BoardDTO {
 	private int reply;
 	private int hit;
 	private Date logtime;
+	
 }

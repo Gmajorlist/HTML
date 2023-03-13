@@ -13,10 +13,10 @@ div{
 }
 </style>
 </head>
-<body style="background-color:beige">
+<body>
 <form name="boardWriteForm" method="post" action="boardWrite.jsp">
 	<h3>
-		<img src="../image/vlvlan.png" width="30" height="30" alt="망상토끼" 
+		<img src="../image/3.gif" width="70" height="70" alt="망상토끼" 
 		onclick="location.href='../index.jsp'" style="cursor: pointer;"> 글쓰기
 	</h3>
 	<table border="1" cellpadding="5" cellspacing="0">

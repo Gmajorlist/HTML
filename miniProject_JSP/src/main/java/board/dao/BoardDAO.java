@@ -20,19 +20,14 @@ public class BoardDAO {
 	private Connection conn;
 	private PreparedStatement pstmt;
 	private ResultSet rs;
-	private DataSource ds;
 	
-//	private String driver = "oracle.jdbc.driver.OracleDriver";
-//	private String url = "jdbc:oracle:thin:@localhost:1521:xe";
-//	private String username = "C##JAVA";
-//	private String password = "1234";
+	private DataSource ds;
 	
 	private static BoardDAO boardDAO = new BoardDAO();
 	
 	public static BoardDAO getInstance() {
 		return boardDAO;
 	}
-	
 	
 	public static void close(Connection conn, PreparedStatement pstmt) {//구현
 		try {
@@ -55,18 +50,17 @@ public class BoardDAO {
 	public BoardDAO() {
 		try {
 			Context ctx = new InitialContext(); //생성
-			ds = (DataSource)ctx.lookup("java:comp/env/jdbc/oracle"); //Tomcat의 경우일때java:comp/env이거 붙여라
+			ds = (DataSource) ctx.lookup("java:comp/env/jdbc/oracle");
+			
 		} catch (NamingException e) {
 			e.printStackTrace();
-		} 
+		}
 	}
-	               
-	
+		
 	public void boardWrite(Map<String, String> map) {
 		String sql = "insert into board(seq,id,name,email,subject,content,ref)"
 				+ " values(seq_board.nextval,?,?,?,?,?,seq_board.currval)";
 		
-	
 		try {
 			conn = ds.getConnection();
 			
@@ -77,7 +71,7 @@ public class BoardDAO {
 			pstmt.setString(4, map.get("subject"));
 			pstmt.setString(5, map.get("content"));
 			
-			pstmt.executeUpdate();
+			pstmt.executeUpdate();//실행 - 개수 리턴
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -86,14 +80,13 @@ public class BoardDAO {
 		}
 	}
 	
-	public List<BoardDTO> boardList(Map<String, Integer>map) {
+	public List<BoardDTO> boardList(Map<String, Integer> map) {
 		List<BoardDTO> list = new ArrayList<BoardDTO>();
 		
-		String sql = "select * from "
-						+"(select rownum rn,tt.* from "
-						+"(select * from board order by ref desc, step asc) tt)"
-						 +"where rn >=? and rn<=?";
-		
+		String sql = "SELECT * FROM "
+				   + "(SELECT ROWNUM RN, TT.* FROM "
+				   + "(SELECT * FROM BOARD ORDER BY REF DESC, STEP ASC) TT "
+				   + ")WHERE RN>=? AND RN<=?";
 		
 		try {
 			conn = ds.getConnection();
@@ -101,6 +94,7 @@ public class BoardDAO {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, map.get("startNum"));
 			pstmt.setInt(2, map.get("endNum"));
+			
 			rs = pstmt.executeQuery();//실행-ResultSet 리턴
 			
 			while(rs.next()) {
@@ -130,8 +124,9 @@ public class BoardDAO {
 		
 		return list;
 	}
-	public int getTotalA() {
-		int totalA =0;
+	
+	public int getTotalA(){
+		int totalA = 0;
 		String sql = "select count(*) from board";
 		
 		try {
@@ -141,17 +136,20 @@ public class BoardDAO {
 			
 			rs.next();
 			totalA = rs.getInt(1);
-		} catch (SQLException e) {
 			
+		} catch (SQLException e) {
 			e.printStackTrace();
-		}finally {
-			BoardDAO.close(conn, pstmt);
+		} finally {
+			BoardDAO.close(conn, pstmt, rs);
 		}
+		
 		return totalA;
 	}
+	
 	public BoardDTO getBoard(int seq) {
 		BoardDTO boardDTO = null;
-		String sql = "select * from board where seq =?";
+		String sql = "SELECT * FROM BOARD WHERE SEQ = ?";
+		
 		try {
 			conn = ds.getConnection();
 			
@@ -161,6 +159,7 @@ public class BoardDAO {
 			rs = pstmt.executeQuery();
 			
 			if(rs.next()) {
+				boardDTO = new BoardDTO();
 				boardDTO.setSeq(rs.getInt("seq"));
 				boardDTO.setId(rs.getString("id"));
 				boardDTO.setName(rs.getString("name"));
@@ -174,15 +173,15 @@ public class BoardDAO {
 				boardDTO.setReply(rs.getInt("reply"));
 				boardDTO.setHit(rs.getInt("hit"));
 				boardDTO.setLogtime(rs.getDate("logtime"));
-				
 			}
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
-		} finally {
+		}finally {
 			BoardDAO.close(conn, pstmt, rs);
-		}
-		return boardDTO;
+		}		
 		
+		return boardDTO;
 	}
 }
 

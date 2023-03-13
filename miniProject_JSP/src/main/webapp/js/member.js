@@ -1,6 +1,6 @@
 function select(){
 	//document.writeForm.email2.value = document.writeForm.email3.value;
-	document.getElementById("email2").value = document.getElementById("email3").value
+	document.getElementById("email2").value = document.getElementById("email3").value;
 }
 
 function checkWrite(){
@@ -13,18 +13,24 @@ function checkWrite(){
 	
 	if(document.getElementById("name").value == "")
 		document.getElementById("nameDiv").innerText="이름 입력";
+		
 	else if(document.getElementById("id").value == "")
 		document.getElementById("idDiv").innerText="아이디 입력";
+		
 	else if(document.getElementById("pwd").value == "")
 		document.getElementById("pwdDiv").innerText="비밀번호 입력";
+		
 	else if(document.getElementById("pwd").value != document.getElementById("repwd").value)
 		document.getElementById("pwdDiv").innerText="비밀번호가 맞지 않습니다";
+		
 	else if(document.getElementById("id").value != document.getElementById("check").value)
 		document.getElementById("idDiv").innerText="중복체크 하세요";
+		
 	else
 		document.writeForm.submit();
 }
-function checkUpdate(){
+
+function checkUpdate() {
 	document.getElementById("nameDiv").innerText = "";
 	document.getElementById("pwdDiv").innerText = "";
 	

@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="member.bean.MemberDTO" %>    
-<%@ page import="member.dao.MemberDAO" %> 
+<%@ page import="member.dao.MemberDAO" %>
+
 <%
 	//데이터
 	String id = (String)session.getAttribute("memId");
@@ -9,7 +10,8 @@
 	//DB
 	MemberDAO memberDAO = MemberDAO.getInstance();
 	MemberDTO memberDTO = memberDAO.getMember(id);
-	%>
+	
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,19 +20,13 @@
 <style type="text/css">
 div {
 	color: red;
-	font-size: 8pt; 
+	font-size: 8pt;
 	font-weight: bold;
 }
 </style>
 </head>
-<body style="background-color:beige" onload="()">
-<h3>
-<center>
-<img src="../image/vlvlan.png" width="30" height="30" alt="꽃" 
-onclick="location.href='../index.jsp'" style="pointer" >회원정보수정
-</h3>
+<body onload="pick()">
 <form name="updateForm" method="post" action="update.jsp">
-<center>
  <table border="1" cellpadding="5" cellspacing="0">
   <tr>
   	<th>이름</th>
@@ -51,7 +47,7 @@ onclick="location.href='../index.jsp'" style="pointer" >회원정보수정
   <tr>
   	<th>비밀번호</th>
   	<td>
-  	 <input type="password" name="pwd" id="pwd" size="40" >
+  	 <input type="password" name="pwd" id="pwd" size="40">
   	 <div id="pwdDiv"></div>
   	</td>
   </tr>
@@ -112,7 +108,7 @@ onclick="location.href='../index.jsp'" style="pointer" >회원정보수정
     <br>
     <input type="text" name="addr1" id="addr1" style="width: 400px;" placeholder="주소" readonly value="<%=memberDTO.getAddr1() %>"/>
     <br>
-    <input type="text" name="addr2" id="addr2" style="width: 400px;" placeholder="상세주소"  value="<%=memberDTO.getAddr2() %>"/>
+    <input type="text" name="addr2" id="addr2" style="width: 400px;" placeholder="상세주소" value="<%=memberDTO.getAddr2() %>"/>
    </td>
   </tr>
   
@@ -129,14 +125,12 @@ onclick="location.href='../index.jsp'" style="pointer" >회원정보수정
 <script type="text/javascript" src="../js/member.js"></script>
 <script type="text/javascript">
 function pick(){
-	document.updateForm.gender[<%=memberDTO.getGender()%>].checked = true;
-	document.updateForm.tel1.value = '<%=memberDTO.getTel1()%>'
+	document.updateForm.gender[<%=memberDTO.getGender() %>].checked = true;
+	document.updateForm.tel1.value = '<%=memberDTO.getTel1() %>'
 }
 </script>
 </body>
 </html>
-
-
 
 
 

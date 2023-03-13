@@ -13,18 +13,9 @@ div {
 }
 </style>
 </head>
-<body style="background-color:beige">
-<h3>
-<center>
-<!-- <img src="../image/vlvlan.png" width="30" height="30" alt="꽃" 
-onclick="location.href='./index.jsp'" style="pointer" >회원가입 -->
-</h3>
+<body>
 <form name="writeForm" method="post" action="write.jsp">
  <table border="1" cellpadding="5" cellspacing="0">
-<img src="../image/vlvlan.png" width="30" height="30" alt="꽃" 
-onclick="location.href='./index.jsp'" style="pointer" >
- <h2> 회원가입 </h2>
-<div style="text-align:center;">
   <tr>
   	<th>이름</th>
   	<td>
@@ -37,8 +28,12 @@ onclick="location.href='./index.jsp'" style="pointer" >
   	<th>아이디</th>
   	<td>
   	 <input type="text" name="id" id="id" size="30" placeholder="아이디 입력">
+  	 
   	 <input type="hidden" id="check" value="">
+  	 
   	 <input type="button" value="중복체크" onclick="checkId()">
+  	 
+  	 
   	 
   	 <div id="idDiv"></div>
   	</td>
@@ -72,9 +67,9 @@ onclick="location.href='./index.jsp'" style="pointer" >
   <tr>
    <th>이메일</th>
    <td>
-    <input type="text" name="email1"  style="width: 120px;">
+    <input type="text" name="email1" style="width: 120px;">
     @
-    <input type="text" name="email2"  id="email2" style="width: 120px;">
+    <input type="text" name="email2" id="email2" style="width: 120px;">
     <select name="email3" id="email3" style="width: 120px;" onchange="select()">
      <option value="">직접입력</option>
      <option value="naver.com">naver.com</option>
@@ -119,8 +114,6 @@ onclick="location.href='./index.jsp'" style="pointer" >
   	</td>
   </tr>
  </table>
- </div>
-
 </form>
 
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
@@ -128,18 +121,28 @@ onclick="location.href='./index.jsp'" style="pointer" >
 <script type="text/javascript">
 function checkId(){
 	var id = document.getElementById("id").value;
-	document.getElementById("idDiv").innerText =""
-		
-	if(id == "")
-		document.getElementById("idDiv").innerHTML = "<font color='pink'>먼저 아이디를 입력하세요</font>";
+	document.getElementById("idDiv").innerText = "";
+	
+	if(id == "") 
+		document.getElementById("idDiv").innerHTML = "<font color='magenta'>먼저 아이디를 입력하세요</font>";
 	else
-		window.open("checkId.jsp?id="+id,"checkId","width=600 height=150 left=700 top=200")
-
+		window.open("./checkId.jsp?id="+id, "checkId", "width=500 height=150 left=900 top=200")
 }
-
 </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
