@@ -37,6 +37,7 @@ onclick="location.href='./index.jsp'" style="pointer" >
   	<th>아이디</th>
   	<td>
   	 <input type="text" name="id" id="id" size="30" placeholder="아이디 입력">
+  	 <input type="hidden" id="check" value="">
   	 <input type="button" value="중복체크" onclick="checkId()">
   	 
   	 <div id="idDiv"></div>

@@ -26,34 +26,34 @@ div{
 </head>
 <body>
 <%if(boardDTO != null){ %>
-<form name="boardWriteForm" method="post" action="boardWrite.jsp">
+<form name="boardWriteForm" method="post" action="">
 	<h3>
-		<img src="../image/vlvlan.png" width="30" height="30" alt="ㅗㅗ" 
+		<img src="../image/vlvlan.png" width="30" height="30" alt="안녕" 
 		onclick="location.href='../index.jsp'" style="cursor: pointer;"> 작성한 글확인
 	</h3>
-	<table border="1" cellpadding="5" cellspacing="0">
-		<tr>
-			<th>제목</th>
-			<td>
-				<input type="text" name="subject" id="subject" size="50" value="<%=boardDTO.getSubject()%>">
-				<div id="subjectDiv"></div>
+	<table width="450" border="2" cellpadding="5" cellspacing="0" fram="hside" rules="rows">
+		<tr><!--white -space 먹힐려면 테이블에서 넚이를 잡아줘야합니다  -->
+			
+			<td colspan=3>
+				<h2<%=boardDTO.getSubject()%>"></h2>
+				
 			</td>
 		</tr>
+		<tr>
+			<td width="150" align="center">글번호 :<%=boardDTO.getSubject()%></td>
+			<td width="150" align="center">작성자 :<%=boardDTO.getSubject()%></td>
+			<td width="150" align="center">조회수 :<%=boardDTO.getSubject()%></td>
+		</tr>	
 		
 		<tr>
-			<th>내용</th>
-			<td>
-				<textarea name="content" id="content" cols="50" rows="15"><%=boardDTO.getSubject()%></textarea>  <!-- textarea 벨류값이 없음 쓰면안돼 -->
-				<div id="contentDiv"></div>
-			</td>
-		</tr>
-		
-		<tr>
-			<td colspan="2" align="center">
-				<input type="button" value="목록" onclick="">
+			<td colspan="3" height="250" valign="top">
+				<div style="width:100%, hiught: 100%; overflow: auto; " >
+					<pre style="white-space: pre-line; word-break: break-all;"><%=boardDTO.getSubject()%></pre>
+				</div>
 			</td>
 		</tr>
 	</table>
+	<input type="button" value="목록" onclick="history.go(-1)">
 </form>
 <%} %>
 </body>

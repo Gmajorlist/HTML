@@ -32,6 +32,7 @@ boolean existId = memberDAO.isExistId(id); // 아이디가 있다 /true/ 사용 
 <script type="text/javascript">
 function checkIdClose(id){
 	opener.writeForm.id.value = id             /*숫자 "문자"    따옴표가없으면 다 숫자로 입력해버림*/
+	opener.writeForm.check.value = id  /*  중복체크 보큰눌렀다는 확인 */
 	window.close()
 	opener.writeForm.pwd.focus()
 }

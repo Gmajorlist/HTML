@@ -102,8 +102,8 @@ function boardPaging(pg){
 }
 
 function isLogin(memId, seq){
-	alert(memId +", " + seq)
-	if(memId == 'null') alert("먼저 로그인해")
+	if(memId == 'null')
+	alert("먼저 로그인해")
 	else
 		location.href="boardView.jsp?seq=" +seq + "&pg" + pg;
 }
