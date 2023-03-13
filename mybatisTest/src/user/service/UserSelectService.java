@@ -1,10 +1,10 @@
 package user.service;
 
-public class UserSelectService {
+public class UserSelectService implements UserService {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+	@Override
+	public void execute() {
+		
 	}
 
 }
