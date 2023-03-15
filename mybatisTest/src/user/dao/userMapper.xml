@@ -35,4 +35,37 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<update id="update" parameterType="java.util.Map">
 		update usertable set name=#{name}, pwd=#{pwd} where id=#{id}
 	</update>
+	
+	<delete id="delete" parameterType="String">
+		delete usertable where id=#{id}
+	</delete>
+	
+	<select id="search" parameterType="java.util.Map" resultType="user">
+	 <!-- 1번쨰 XML  -->
+	<!--   select * from usertable where
+	 <if test="columnName == 'name'">
+	 	name like '%'|| #{value} ||'%'
+	 </if>
+	 <if test="columnName == 'id'">
+	 	id like '%'|| #{value} ||'%'
+	 </if> -->
+	 
+	 <!--2번째  -->
+	<!--  select * from usertable where
+	 <choose>
+	 	<when test="columnName == 'name'">
+	 		name like '%' || #{value} ||'%'
+	 	</when>
+	 	<otherwise>
+	 		id like '%' || #{value} ||'%'
+	 	</otherwise>
+	 </choose> -->
+	 
+	 
+	 select * from usertable where ${columnName} like '%' || #{value} ||'%'
+	 
+	 
+	 
+	</select>
+	
 </mapper>

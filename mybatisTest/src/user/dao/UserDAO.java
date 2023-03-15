@@ -64,6 +64,20 @@ public class UserDAO {
 		sqlSession.commit();
 		sqlSession.close();
 	}
+
+	public void delete(String id) {
+		SqlSession sqlSession = sqlSessionFactory.openSession(); //생성
+		sqlSession.delete("userSQL.delete",id);
+		sqlSession.commit();
+		sqlSession.close();
+	}
+
+	public List<UserDTO> searchList (Map<String, String> map) {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		List<UserDTO> list  = sqlSession.searchList("userSQL.search",map);
+		sqlSession.close();
+		return list;
+	}
 		
 }
 

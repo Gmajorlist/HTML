@@ -34,8 +34,8 @@ public class UserUpdateService implements UserService{
 		System.out.print("변경할 비밀번호 입력 : ");
 		String pwd = sc.next();
 	
-		Map<String,String>map = new HashMap<>();
-		map.put("name", name);
+		Map<String,String> map = new HashMap<>();
+		map.put("name", name); 
 		map.put("id", id);
 		map.put("pwd", pwd);
 		
@@ -43,11 +43,6 @@ public class UserUpdateService implements UserService{
 		
 		System.out.println("데이터를 수정하였습니다");
 		
-	}
-	
-	
-	
-	
-		
+	}	
 	}
 

@@ -23,11 +23,13 @@ public class UserDeleteService implements UserService {
 			System.out.println("아이디가 없습니다.");
 		return; //함수를 나가라
 	}
-		System.out.println();
-		System.out.println("이름\t아이디\t비밀번호");
-		System.out.println(userDTO.getName() + "\t" + userDTO.getId() + "\t" + userDTO.getPwd());
+		userDAO.delete(id);
+		System.out.println("데이터를 삭제하였습니다.");
 		
-		System.out.print("찾고자 하는 아이디를 입력");
+		
+		
+		
+		
 		
 		
 		
