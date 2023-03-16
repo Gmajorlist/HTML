@@ -2,6 +2,8 @@
     pageEncoding="UTF-8"%>
 <%@ page import="member.bean.MemberDTO" %>
 <%@ page import="member.dao.MemberDAO" %>
+<%@ page import="java.util.Map" %>
+<%@ page import="java.util.HashMap" %>
 <%
 	//데이터
 	String id = request.getParameter("id");
@@ -9,7 +11,10 @@
 
 	//DB
 	MemberDAO memberDAO = MemberDAO.getInstance();
-	MemberDTO memberDTO = memberDAO.memberLogin(id, pwd);
+	Map<String, String> map = new HashMap<String, String>();
+	map.put("id", id);
+	map.put("pwd", pwd);
+	MemberDTO memberDTO = memberDAO.memberLogin(map);
 %>
 
 <!DOCTYPE html>
