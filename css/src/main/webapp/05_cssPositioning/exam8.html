@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+.item span{
+	visibility: hidden; /*  공간이 살아있어서 이걸써야함 */
+	/* display: none; */ /*  이것을 쓰면 공간을 줄여버려서 이상해짐 */
+	}
+	
+.item:hover span {/*  hidden으로 숨겨놓은 애들은 이벤트 처리가 안된다.  가상처리가 안됩니다.*/
+	visibility: visible;
+	color:red;
+
+/* item에 마우스가 올라가면 안보이는게 보임 */
+}
+
+</style>
+</head>
+<body>
+<h3>다음 빈 곳에 숨은 단어?</h3>
+<hr>
+<ul>
+	<li>I(<span class="item"><span> love</span></span>) you.
+	<li>CSS is Cascading
+		(<span class="item"><span>Style</span></span>) Sheet;
+	<li>응답하라(<span class="item"><span>1988</span></span>).
+
+
+</ul>
+</body>
+</html>
+<!-- 
+
+
+ -->
