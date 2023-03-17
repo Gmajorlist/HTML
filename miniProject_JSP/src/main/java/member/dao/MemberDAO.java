@@ -44,7 +44,7 @@ public class MemberDAO {
 	
 	public MemberDTO memberLogin(Map map) {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
-		MemberDTO memberDTO= sqlSession.selectOne("memberSQL.memberLogin", map);
+		MemberDTO memberDTO = sqlSession.selectOne("memberSQL.memberLogin", map);
 		sqlSession.close();
 		return memberDTO;
 	}
@@ -52,7 +52,7 @@ public class MemberDAO {
 	
 	public int memberWrite(MemberDTO memberDTO) {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
-		 int su= sqlSession.insert("memberSQL.memberWrite",memberDTO);
+		 int su = sqlSession.insert("memberSQL.memberWrite",memberDTO);
 		 sqlSession.commit();
 		 sqlSession.close();
 		 return su;
@@ -62,8 +62,11 @@ public class MemberDAO {
 		boolean existId = false;
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		MemberDTO memberDTO = sqlSession.selectOne("memberSQL.isExistId",id);
-		if(memberDTO != null) existId = true;
+		if(memberDTO != null) {
+			existId = true;
+		}
 		sqlSession.close();
+		
 		return existId;
 	}
 	public MemberDTO getMember(String id) {

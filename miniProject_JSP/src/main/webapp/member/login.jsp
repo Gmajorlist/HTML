@@ -14,7 +14,7 @@
 	Map<String, String> map = new HashMap<String, String>();
 	map.put("id", id);
 	map.put("pwd", pwd);
-	MemberDTO memberDTO = memberDAO.memberLogin(map);
+	MemberDTO memberDTO = memberDAO.memberLogin(map); 
 %>
 
 <!DOCTYPE html>

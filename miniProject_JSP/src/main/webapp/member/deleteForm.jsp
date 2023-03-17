@@ -17,10 +17,14 @@
 		//MemberDAO memberDAO = MemberDAO.getInstance();
 		//exist = memberDAO.isExistPwd(id, pwd); //비밀번호가 있으면 true, 없으면 false
 		
-		if(memPwd.equals(pwd)) exist = true;
+		if(memPwd.equals(pwd)){
+			exist = true;
+		}
 	}
 	
-	if(exist) response.sendRedirect("delete.jsp");
+	if(exist){
+		response.sendRedirect("delete.jsp");
+	}
 %>
 
 <!DOCTYPE html>
