@@ -10,10 +10,10 @@
 <body>
 <h3>
 ${param[''] }
-${ param['x']} + ${ param['y'] } = ${param['x'] } + ${param['y'] } <br>
-${ param['x']} -  ${ param['y'] } =${ param['x']} - ${ param['y'] }<br>
-${ param.x} *  ${ param.y } = ${ param.x  *  param.y }<br>
-${ param.x]} /  ${ param.y } = ${param.x / param.y } <br>
+${ param['x']} + ${ param['y'] } = ${param['x'] } + ${param['y'] } <br><br>
+${ param['x']} -  ${ param['y'] } =${ param['x']} - ${ param['y'] }<br><br>
+${ param.x} *  ${ param.y } = ${ param.x  *  param.y }<br><br>
+${ param.x]} /  ${ param.y } = ${ param.x / param.y }<br><br>
 </h3>
 
 

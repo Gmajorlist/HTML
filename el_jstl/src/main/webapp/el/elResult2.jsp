@@ -8,13 +8,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h3>
-${param[''] }
-${ param['x']} + ${ param['y'] } = ${param['x'] } + ${param['y'] } <br><br>
-${ param['x']} -  ${ param['y'] } =${ param['x']} - ${ param['y'] }<br><br>
-${ param.x} *  ${ param.y } = ${ param.x  *  param.y }<br><br>
-${ param.x]} /  ${ param.y } = ${ param.x / param.y }<br><br>
-</h3>
+<h3>자바클래스의 메소드를 이용</h3>
+
+${ param['x']} + ${ param['y'] } = ${param['x']  + $param['y'] } <br><br>
+
+
 
 
 </body>

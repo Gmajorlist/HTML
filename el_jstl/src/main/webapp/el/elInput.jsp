@@ -7,7 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<table>
+<form action="elResult.jsp">
+<table >
 	<tr>
 		<th align="center">X</th>
 		<td>
@@ -27,5 +28,6 @@
 		</td>
 	</tr>
 </table>
+</form>
 </body>
 </html>
