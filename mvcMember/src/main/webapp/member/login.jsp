@@ -26,7 +26,7 @@
 <body>
 <% if(memberDTO == null) {
 	//페이지 이동
-	response.sendRedirect("loginFail.jsp");
+	response.sendRedirect("/mvcMember/member/loginFail.do");
 	
 }else{
 	//세션 생성

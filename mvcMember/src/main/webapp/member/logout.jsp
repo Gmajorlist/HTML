@@ -39,7 +39,7 @@
 <script type="text/javascript">
 window.onload=function(){
 	alert("로그아웃");
-	location.href = "/mvcMember/member/logout.do";
+	location.href = "/mvcMember/member/login.do";
 }
 </script>
 </body>
