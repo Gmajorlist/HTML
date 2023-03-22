@@ -72,9 +72,9 @@ public class UserDAO {
 		sqlSession.close();
 	}
 
-	public List<UserDTO> searchList (Map<String, String> map) {
+	public List<UserDTO> search (Map<String, String> map) {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
-		List<UserDTO> list  = sqlSession.searchList("userSQL.search",map);
+		List<UserDTO> list  = sqlSession.selectList("userSQL.search",map);
 		sqlSession.close();
 		return list;
 	}

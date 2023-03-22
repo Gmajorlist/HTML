@@ -10,8 +10,6 @@ public class UserDeleteService implements UserService {
 	@Override
 	public void execute() {
 		
-		Scanner scan = new Scanner(System.in);
-		
 		Scanner sc = new Scanner(System.in);
 		System.out.print("찾고자 하는 아이디를 입력");
 		String id = sc.next();

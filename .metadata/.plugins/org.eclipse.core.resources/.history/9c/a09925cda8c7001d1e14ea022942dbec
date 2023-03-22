@@ -1,0 +1,67 @@
+package com.control;
+
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebInitParam;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+
+@WebServlet(
+	urlPatterns = {"*.do"},
+	initParams = {
+			@WebInitParam(name="propertyConfig",  value="command")
+	}
+)
+public class ControlServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	private Map<String, Object> map = new HashMap<String, Object>();
+	
+	@Override   // 환경설정페이지를 읽어와야해서 두번째껄로
+	public void init(ServletConfig config) throws ServletException {
+		String propertyConfig = config.getInitParameter("propertyConfig");
+		System.out.println("propertyConfig" = propertyConfig);
+	}
+	
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+		execute(request,response);
+	}
+// get / post 에서 execute로 다 보내줘
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
+		execute(request, response);
+	}
+	protected void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
+		System.out.println();
+		
+		//한글처리 하는 법 
+		if(request.getMethod().equals("POST")) request.setCharacterEncoding("UTF-8");
+		
+		//요청이 들어왔을 때 => http://localhost:8080/mvcmember/member/writeForm.do
+	    String category = request.getServletPath();
+	    System.out.println("category = "+category); // 결과가 /member/writeForm.do
+	      
+	    CommandProcess com = (CommandProcess)map.get(category); //member.service.WriteFormService
+	    String view = null;
+	      
+	    try {
+	       view = com.requestPro(request, response); // "/member/writeForm.jsp"
+	    } catch (Throwable e) {
+	       e.printStackTrace();
+	    }
+	      
+	    //forward
+	    RequestDispatcher dispatcher = request.getRequestDispatcher(view);//상대번지
+	    dispatcher.forward(request, response);//제어권 넘기기
+		
+		
+	}
+}

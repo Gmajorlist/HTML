@@ -11,7 +11,7 @@ public class UserSelectService implements UserService {
 	public void execute() {
 		System.out.println();
 		//DB
-		UserDAO userDAO = UserDAO.getInstance(); //이미생성되어있는 주소 값을 받아와라
+		UserDAO userDAO = UserDAO.getInstance(); //이미생성되어있는 주소 값을 받아와라 외부에서 호출시 new사용하지않음
 		List<UserDTO> list = userDAO.getUserList();
 		
 		System.out.println("이름\t아이디\t비밀번호");

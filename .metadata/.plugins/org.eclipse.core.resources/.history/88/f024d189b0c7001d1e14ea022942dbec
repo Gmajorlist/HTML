@@ -1,0 +1,2 @@
+#  	요      청        =     클 래 스 
+/member/writeForm.do=member.service.WriteFormService

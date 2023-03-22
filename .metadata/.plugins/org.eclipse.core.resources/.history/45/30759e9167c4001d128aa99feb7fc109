@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<dl class="skip">
+	<dt>skip navigation</dt>
+	<dd><a href="#content">skip to content</a>
+</dl><!--//skip  -->
+</body>
+</html>

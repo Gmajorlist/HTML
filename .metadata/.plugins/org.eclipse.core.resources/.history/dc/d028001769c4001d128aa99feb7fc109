@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<dl class="skip">
+	<dt class="blind">skip navigation</dt>
+	<dd><a href="#content">skip to content</a>
+</dl><!--//skip  -->
+<hr>
+
+<div id="wrap">
+	<div id="header">
+		<h1 class="logo"><a href="#">LOGO</a></h1>
+	</div><!-- //header -->
+	<hr>
+	
+	
+	<div id="container">
+		<div class="snb"></div> <!--//snb  -->
+		<hr>
+		
+		<div id="content"></div><!--//content  -->
+	</div><!--//container  -->
+	
+	
+	<div id="footer"></div><!--//footer  -->
+</div><!--//wrap  -->
+</body>
+</html>
+
+<!-- 
+
+dl 설명 목록
+dt 용어
+dd 설명
+
+ -->

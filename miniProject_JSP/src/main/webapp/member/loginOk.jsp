@@ -35,15 +35,16 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h3><img src="../image/3.gif" width="70" height="70" alt="망상토끼" 
-onclick="location.href='../index.jsp'" style="cursor: pointer;"> <%=name %>님 로그인</h3>
+<%-- 
+String name = ssesion.getAttribute("memName"); 썻던 것을 밑에 달러 표시로 쓰면 된다
+ --%>
+<h3> ${sessionScope.memName }님 로그인</h3>
 <br>
-<input type="button" value="로그아웃" onclick="location.href='logout.jsp'">
+<input type="button" value="로그아웃" onclick="location.href='/mvcMember/member/logout.do'">
 
-<%-- <input type="button" value="회원정보수정" onclick="location.href='updateForm.jsp?id=<%=id %>'">  --%>   
-<input type="button" value="회원정보수정" onclick="location.href='updateForm.jsp'">
+<input type="button" value="회원정보수정" onclick="location.href=''">
 
-<input type="button" value="회원탈퇴" onclick="location.href='deleteForm.jsp'">
+<input type="button" value="회원탈퇴" onclick="location.href=''">
 </body>
 </html>
 

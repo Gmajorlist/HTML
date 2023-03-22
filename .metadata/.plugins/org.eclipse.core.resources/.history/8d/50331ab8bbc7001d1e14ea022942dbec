@@ -1,0 +1,4 @@
+#  	요      청        =     클 래 스 
+/member/writeForm.do=member.service.WriteFormService
+/member/loginForm.do=member.service.LoginFormService
+/member/login.do=member.service.LoginService

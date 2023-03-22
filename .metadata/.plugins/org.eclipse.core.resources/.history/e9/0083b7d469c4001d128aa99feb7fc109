@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<dl class="skip">
+	<dt class="blind">skip navigation</dt>
+	<dd><a href="#content">skip to content</a>
+</dl><!--//skip  -->
+<hr>
+
+<div id="wrap">
+	<div id="header">
+		<h1 class="logo"><a href="#">LOGO</a></h1>
+		
+		<dl class="topnav">
+			<dt>top navigation</dt>
+			<dd><a href="#">Login</a></dd>
+			<dd><a href="#">Member join</a></dd>
+			<dd><a href="#">Sitemap</a></dd>
+		</dl>
+		
+		<h2>main navigation</h2>
+		<ul class="mainnav">
+			<li><a href="#">About</a></li>
+			<li><a href="#">Service</a></li>
+			<li><a href="#">Portfolio</a></li>
+			<li><a href="#">Contact to</a></li>
+		</ul>
+	</div><!-- //header -->
+	<hr>
+	
+	
+	<div id="container">
+		<div class="snb">
+			<h2>About</h2>
+			<ul>
+				<li><a href="#">Company Info</a></li>
+				<li><a href="#">History</a></li>
+				<li><a href="#">Location</a></li>
+			</ul>
+		</div> <!--//snb  -->
+		<hr>
+		
+		<div id="content">
+			<p class="locate">
+				<a href="#">Home</a>
+				<a href="#">About</a>
+				<a href="#">Company Info</a>
+			</p>	
+		</div><!--//content  -->
+	</div><!--//container  -->
+	
+	
+	<div id="footer"></div><!--//footer  -->
+</div><!--//wrap  -->
+</body>
+</html>
+
+<!-- 
+
+dl 설명 목록
+dt 용어
+dd 설명
+
+ -->

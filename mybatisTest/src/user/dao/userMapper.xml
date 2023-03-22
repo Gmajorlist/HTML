@@ -61,7 +61,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	 	</otherwise>
 	 </choose> -->
 	 
-	 
+	 <!--3번째  -->
 	 select * from usertable where ${columnName} like '%' || #{value} ||'%'
 	 
 	 

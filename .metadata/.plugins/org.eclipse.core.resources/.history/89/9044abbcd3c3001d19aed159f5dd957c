@@ -1,0 +1,122 @@
+package board.dao;
+
+
+import java.io.IOException;
+import java.io.Reader;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+
+import board.bean.BoardDTO;
+
+public class BoardDAO {
+	private static BoardDAO boardDAO = new BoardDAO();
+	private SqlSessionFactory sqlSessionFactory;
+	
+	public static BoardDAO getInstance() {
+		return boardDAO;
+	}
+	
+	public BoardDAO() {
+		try {
+			Reader reader = Resources.getResourceAsReader("conf/mybatis-config.xml");
+			sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
+		
+	public void boardWrite(Map<String, String> map) {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		sqlSession.insert("boardSQL.boardWrite",map);
+		sqlSession.commit();
+		sqlSession.close();
+	}
+
+	public List<BoardDTO> boardList(Map<String, Integer> map) {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		List<BoardDTO> list = sqlSession.selectList("boardSQL.boardList",map);
+		sqlSession.close();
+		return list;
+		
+	}	
+		
+	public int getTotalA(){
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		int totalA = sqlSession.selectOne("boardSQL.getTotalA"); // count에서 selectone 쓰려면 int 써야함
+		sqlSession.close();
+		return totalA;
+		
+		
+	
+	public BoardDTO getBoard(int seq) {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		BoardDTO boardDTO = sqlSession.selectOne("",seq);
+		sqlSession.close();
+		
+		
+		
+	}
+		BoardDTO boardDTO = null;
+		String sql = "SELECT * FROM BOARD WHERE SEQ = ?";
+		
+		try {
+			conn = ds.getConnection();
+			
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, seq);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				boardDTO = new BoardDTO();
+				boardDTO.setSeq(rs.getInt("seq"));
+				boardDTO.setId(rs.getString("id"));
+				boardDTO.setName(rs.getString("name"));
+				boardDTO.setEmail(rs.getString("email"));
+				boardDTO.setSubject(rs.getString("subject"));
+				boardDTO.setContent(rs.getString("content"));
+				boardDTO.setRef(rs.getInt("ref"));
+				boardDTO.setLev(rs.getInt("lev"));
+				boardDTO.setStep(rs.getInt("step"));
+				boardDTO.setPseq(rs.getInt("pseq"));
+				boardDTO.setReply(rs.getInt("reply"));
+				boardDTO.setHit(rs.getInt("hit"));
+				boardDTO.setLogtime(rs.getDate("logtime"));
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			BoardDAO.close(conn, pstmt, rs);
+		}		
+		
+		return boardDTO;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

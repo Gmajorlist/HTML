@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+.imgDiv{
+	border: 1px solid red;
+	width: 150px;
+	height: 150px;
+	margin:100px;
+	overflow: hidden;
+
+}
+</style>
+</head>
+<body>
+<div class="imgDiv">
+	<img src="../img/spade-2.png" alt="카드">
+</div>
+</body>
+</html>
