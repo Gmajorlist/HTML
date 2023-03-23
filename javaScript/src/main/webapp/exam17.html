@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script type="text/javascript">
+function insertQuestion(num){
+    alert(num);
+
+    var str = prompt("사칙연산의 수식을 입력하세요. (예 : 100+50)", "");
+    var answer = eval(str); //입력받은 문자열을수식으로 변환
+    var result = "<font color='red'>" + str + " = " + answer + "</font>";
+
+    document.getElementById("question").innerHTML = result;
+}
+
+    </script>
+</head>
+<body onload="insertQuestion(222)">
+ //바디 태그를 다 읽고 온로드가 실행되는거다
+<script type="text/javascript">
+insertQuestion(111); //호출
+</script>
+
+<h1 id="question"></h1>
+</body>
+</html>
+<!--
+ 1. body태그 읽던 중 자바스크립트의 insertQuestion(111);이 호출된다.
+    => error 발생( document.getElementById("question").innerHTML = result;)
+    => 아직 body태그의 <h1 id="question"></h1> 여기를 안읽어서 나오는 error이다
+
+2.body태그 안의 모든 내용을 실행한 다음에 onload()가 처리된다.
+
+3. onload="insertQuestion(222)"에서 호출이 되면 이번에는 error가 안나온다.
+    => body태그의 <h1 id="question"></h1> 여기를 읽었기에 error가 안나온다.
+-->
