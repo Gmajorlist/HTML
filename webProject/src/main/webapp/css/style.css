@@ -37,13 +37,13 @@
     font-size: 8pt;
 }
 
-#mainMenu:after {
+#Menu:after {
     display: block;
     content: '';
     clear: both;
 }
 
-#mainMenu li {
+#Menu li {
     width: 140px;
     font-size: 12pt;
     font-weight: bold;
@@ -56,26 +56,26 @@
     color: #fff;
 }
 
-#mainMenu a:hover{
+#Menu a:hover{
     color: lightsalmon;
 }
 
-#mainMenu li:hover .subMenu {
+#Menu li:hover .subMenu {
     display: block;
 }
 
-#mainMenu .subMenu {
+#Menu .subMenu {
     display: none;
     position: absolute;
 }
 
-#mainMenu .subMenu a {
+#Menu .subMenu a {
     display: block;
     background: steelblue;
     color: #fff;
 }
 
-#mainMenu .subMenu a:hover {
+#Menu .subMenu a:hover {
     display: block;
     color: lightsalmon;
 }

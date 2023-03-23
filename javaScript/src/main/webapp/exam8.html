@@ -7,6 +7,21 @@
     <title>Document</title>
 </head>
 <body>
-    
+
+<script type="text/javascript">
+//for
+
+let sum = 0;
+for(let i=1; i<=10; i++){
+    document.write("i =" + i + "<br/>");
+    sum += i;
+}//for
+////조건이 틀려야 조건을 벗어난다   // error = i 라는 지역변수때문에 
+//document.write("탈출 i = " + i + "<br/>"); // error가 났다고 화면 표시 X 
+//(F12) 개발자도구 열어줘 = Uncaught ReferenceError: i is not defined
+// => let i를 for문 위에서 선언하거나 또는 var i 로 바꾼다.
+
+document.write(" <h1>1부터 10까지의 합은 " + sum + " 입니다.</h1> ");
+</script>
 </body>
 </html>
