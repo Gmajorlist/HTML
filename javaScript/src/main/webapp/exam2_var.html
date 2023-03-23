@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<script type="text/javascript">
+// var는 전역변수
+var a = 100;
+a = 250;
+console.log(a)  //250
+{
+	var a = 200// 200
+	console.log(a) // 200 덮어 버린다  괄호로 구역을 잡아서 따로 나오는 거다
+	{
+		var a = 300 //300
+		console.log(a)
+		{
+			var a = 400 //400
+			console.log(a)
+		}
+		console.log(a) //400
+	}
+	console.log(a) //400
+}
+console.log(a)//400          계속 값을 덮어버려서 마지막에 var a 에 잇는 400으로 다덮어버린거다 
+
+
+</script>
+</body>
+</html>
