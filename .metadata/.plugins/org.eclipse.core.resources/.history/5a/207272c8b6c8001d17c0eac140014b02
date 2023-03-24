@@ -1,0 +1,221 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+#header a,
+#header a:active,
+#header a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+#wrap {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1200px;
+}
+
+#header {
+    background-color: #0040FF;
+    padding-top: 20px;
+}
+
+#logo {
+    font-family: 'Merienda', sans-serif;
+    color: white;
+    float: left;
+    padding-left: 30px;
+    padding-right: 50px;
+}
+
+.drop {
+    font-size: 8pt;
+}
+
+#mainMenu:after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+#mainMenu li {
+    width: 140px;
+    font-size: 12pt;
+    font-weight: bold;
+    list-style: none;
+    position: relative;
+    float: left;
+    text-align: center;
+    background: #0040FF;
+    line-height: 70px;
+    color: #fff;
+}
+
+#mainMenu a:hover{
+    color: lightsalmon;
+}
+
+#mainMenu li:hover .subMenu {
+    display: block;
+}
+
+#mainMenu .subMenu {
+    display: none;
+    position: absolute;
+}
+
+#mainMenu .subMenu a {
+    display: block;
+    background: steelblue;
+    color: #fff;
+}
+
+#mainMenu .subMenu a:hover {
+    display: block;
+    color: lightsalmon;
+}
+
+#notice a {
+    text-decoration: none;
+    color: black;
+}
+
+#notice a:hover {
+    text-decoration: underline;
+}
+
+#content1 {
+    display: inline-block;
+    width: 610px;
+}
+
+#content2 {
+    width: 590px;
+    float: right;
+    margin-top: 40px;
+}
+
+#content2 img {
+    padding: 0 20px;
+}
+
+#content2Name {
+    color: gray;
+}
+
+#content2Name a {
+    font-size: 10.5pt;
+    font-weight: bold;
+    padding: 0 65px;
+    text-decoration: none;
+}
+
+#content2Name a,
+#content2Name a:hover,
+#content2Name a:visited {
+    text-decoration: 0;
+    color: gray;
+}
+
+#tab {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-bottom: solid 1px #ccc;
+}
+
+#tab button {
+    cursor: pointer;
+    padding: 13px;
+    font-size: 11pt;
+    border: 0;
+    font-weight: bold;
+    background: white;
+    color: #DEDEDE;
+}
+
+#tab button:hover{
+    color: black;
+}
+
+#tab button.active {
+    border: 1px solid #ccc;
+    background: #DEDEDE;
+    color: salmon;
+}
+
+.tabcontent {
+    display: none;
+}
+
+#tab a {
+    color: gray;
+    text-decoration: none;
+}
+
+#tab a:visited {
+    color: black;
+}
+
+#content2 img {
+    border-radius: 70%;
+    width: 150px;
+    height: 150px;
+}
+
+#notice ul {
+    padding-left: 30px;
+    line-height: 2.2;
+    font-size: 11pt;
+}
+
+#contentWrap {
+    padding-bottom: 20px;
+    border-bottom: 2px solid black;
+}
+
+#content2Name {
+    padding: 0;
+    margin: 0;
+}
+
+#footerWrap {
+    padding-top: 20px;
+    width: 1200px;
+}
+
+#footer1 {
+    padding: 0 20px;
+    display: inline-block;
+}
+
+#footerWrap a,
+#footerWrap a:hover,
+#footerWrap a:visited {
+    text-decoration: none;
+    color: gray;
+    font-size: 10pt;
+}
+
+#footerMenu a {
+    padding-right: 11px;
+    margin-right: 10px;
+    background: no-repeat 100% 50%;
+}
+
+#footerMenu a:last-child {
+    background: none;
+}
+
+#footerAddress {
+    padding-top: 15px;
+    color: #6E6E6E;
+    font-size: 9pt;
+}
+
+#footer2 {
+    float: right;
+}

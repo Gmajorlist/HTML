@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<hr>
+<div id="wrap">
+	<div id="header">
+		<h1 class="logo"><a href="#">Dream Jeju</a></h1>
+		
+		
+	</div><!-- //header -->
+	<hr>
+
+			
+		</div>
+	</div>
+	<hr>
+	
+	<div id="footer">
+		<dl class="btmnav">
+		
+		</dl>
+	
+		<p class="copy">
+			Copyright &copy; COMPANY Design<br>
+			Powered by Webazit, e-mail : webmaster@company.com
+		</p>
+	</div>  
+</div>
+</body>
+</html>
+
+<!-- 
+
+dl 설명 목록
+dt 용어
+dd 설명
+
+ -->
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

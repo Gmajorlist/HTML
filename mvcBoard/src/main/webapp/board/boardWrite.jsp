@@ -12,7 +12,7 @@
 <script type="text/javascript">
 window.onload=function(){
 	alert("글작성 완료");
-	location.href = "mvcboard/board/boardList.do?pg=1";
+	location.href = "/mvcBoard/board/boardList.do?pg=1";
 }
 </script>
 </body>

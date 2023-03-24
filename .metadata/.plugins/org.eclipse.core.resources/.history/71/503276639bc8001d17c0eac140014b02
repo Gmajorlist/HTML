@@ -1,0 +1,42 @@
+@charset "UTF-8";
+@import url('http://fonts.googleapis.com/css2?family=Merienda:wght@700&display=swap');
+
+.logo {
+	font-family: Merienda;
+}
+
+a {
+	color: white;
+	text-decoration: none;
+}
+
+a:visited {
+	color: white;
+}
+#menu{
+	background: #0080FF;
+}
+#menu ul{
+	margin: 0;
+	padding: 0;
+	width: 700px;
+
+}
+#menu ul li {
+	display: inline-block;
+	list-style-type: none;
+	padding: 0 15px;
+}
+#menu ul li a{
+	color:white;
+	text-decoration: none;
+
+
+}
+#menu ul li a:hover{
+	color: black;
+	border: 3px solid red;
+}
+.topnav{
+	border: left;
+}

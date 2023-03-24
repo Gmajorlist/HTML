@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+	<div id="wrap">
+		<div id="header">
+			<div id="logo">
+				<h1>
+					<a href="#">Dream jeju</a>
+				</h1>
+			</div>
+			<ul id="mainMenu">
+				<li><a href="#">단체 여행 <span class="drop" data-bs-toggle="dropdown"></span></a>
+					<ul class="subMenu">
+						<li><a href="#">회사 연수</a></li>
+						<li><a href="#">수학 여행</a></li>
+					</ul></li>
+				<li><a href="#">맞춤 여행 <span class="drop" data-bs-toggle="dropdown"></span></a>
+					<ul class="subMenu">
+						<li><a href="#">4.3 평화 기행</a></li>
+						<li><a href="#">곶자왈 체험</a></li>
+						<li><a href="#">힐링 워크샵</a></li>
+					</ul></li>
+				<li><a href="#">갤러리</a></li>
+				<li><a href="#">문의하기</a></li>
+			</ul>
+		</div>
+		<!-- header -->
+
+		<div id="banner">
+			<img src="image/photo-1.jpg">
+		</div>
+
+		<div id="contentWrap">
+			<div id="content1">
+				<div id="tab">
+					<button class="tablinks active" onclick="openTab(event, 'notice')">공지사항</button>
+					<button class="tablinks" onclick="openTab(event, 'gallery')">갤러리</button>
+				</div>
+				<div id="notice" class="tabcontent" style="display: inline;">
+					<ul>
+						<li><a href="#">사무실을 이전했습니다.</a></li>
+						<li><a href="#">[참가모집] 카약 체험에 초대합니다.</a></li>
+						<li><a href="#">[참가모집] 여름 방학 기간, 오름 체험단을 모집합니다.</a></li>
+						<li><a href="#">겨울, 추천 여행지</a></li>
+						<li><a href="#">가을, 추천 여행지</a></li>
+					</ul>
+				</div>
+				<!--notice-->
+				<div id="gallery" class="tabcontent">
+					<img src="image/img-1.jpg" alt="Image1" /> <img
+						src="image/img-2.jpg" alt="Image2" /> <img
+						src="image/img-3.jpg" alt="Image3" /> <img
+						src="image/img-1.jpg" alt="Image4" /> <img
+						src="image/img-2.jpg" alt="Image5" /> <img
+						src="image/img-3.jpg" alt="Image6" />
+				</div>
+			</div>
+			<!--content1-->
+
+			<div id="content2">
+				<a href="#"><img src="image/icon-1.jpg" alt="평화기행"></a> <a
+					href="#"><img src="image/icon-2.jpg" alt="힐링워크샵"></a> <a
+					href="#"><img src="image/icon-3.jpg" alt="문의하기"></a>
+				<div id="content2Name">
+					<a href="#">평화기행</a> <a href="#"> 힐링워크샵</a> <a href="#"> 문의하기</a>
+				</div>
+			</div>
+			<!--content2-->
+		</div>
+		<!--contentWrap-->
+
+		<div id="footerWrap">
+			<div id="footer1">
+				<div id="footerMenu">
+					<a href="#">회사소개</a> <a href="#">개인정보처리방침</a> <a href="#">여행약관</a>
+					<a href="#">사이트맵</a>
+				</div>
+				<span id="footerAddress"> 제주특별자치도 ***동 ***로 *** (대표전화)
+					123-456-7890 </span>
+			</div>
+			<div id="footer2">
+				<a href="#"><img src="image/sns-1.png"
+					onclick="location.href='https://ko-kr.facebook.com/'"></a> <a
+					href="#"><img src="image/sns-2.png"
+					onclick="location.href='https://www.youtube.com/'"></a> <a
+					href="#"><img src="image/sns-3.png"
+					onclick="location.href='https://www.instagram.com/'"></a>
+			</div>
+		</div>
+		<!--footerWrap-->
+	</div>
+	<!--wrap-->
+
+<script type="text/javascript">
+function openTab(evt, tabName = 'notice') {
+     var i, tabcontent, tablinks;
+     tabcontent = document.getElementsByClassName("tabcontent");
+     
+     for (i = 0; i < tabcontent.length; i++) {
+       tabcontent[i].style.display = "none";
+     }
+     
+     tablinks = document.getElementsByClassName("tablinks");
+     
+     for (i = 0; i < tablinks.length; i++) {
+       tablinks[i].className = tablinks[i].className.replace(" active", "");
+     }
+     
+     document.getElementById(tabName).style.display = "block";
+     evt.currentTarget.className += " active";
+   }
+
+   document.getElementById('defaultOpen').click();
+</script>
+</body>
+</html>

@@ -19,6 +19,11 @@ div {
 onclick="location.href='../index.jsp'" style="cursor: pointer;"> 로그인
 </h3>
 <form name="loginForm" method="post" action="/mvcMember/member/login.do">
+
+
+
+
+
  <table border="1" cellpadding="5" cellspacing="0">
    <tr>
   	<th>아이디</th>
@@ -49,19 +54,16 @@ function checkLogin(){
 	document.getElementById("idDiv").innerText = "";
 	document.getElementById("pwdDiv").innerText = "";
 	
-	if(document.getElementById("id").value == "") {
+	if(document.getElementById("id").value == "")
 		document.getElementById("idDiv").innerText="아이디 입력";
-	}
-	else if(document.getElementById("pwd").value == "") {
+	else if(document.getElementById("pwd").value == "")
 		document.getElementById("pwdDiv").innerText="비밀번호 입력";
-	}
 	else
 		document.loginForm.submit();
 }
 </script>
 </body>
 </html>
-
 
 
 

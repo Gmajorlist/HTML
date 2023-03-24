@@ -7,9 +7,9 @@ import com.control.CommandProcess;
 
 public class WriteFormService implements CommandProcess {
 
-   @Override
-   public String requestPro(HttpServletRequest request, HttpServletResponse response) {
-      return "/member/writeForm.jsp";
-   }
+	@Override
+	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
+		return "/member/writeForm.jsp";
+	}
 
 }

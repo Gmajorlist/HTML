@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+html{ height: 100%;}
+body{ height: 100%; margin: 0; padding: 0;}
+</style>
+</head>
+<body>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5318.431436292524!2d126.97365406551053!3d37.57018089584496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca2ec108605db%3A0x6d76ee5bcaa27563!2z7ISc7Jq47Yq567OE7IucIOyiheuhnOq1rCDshJzrprDrj5k!5e0!3m2!1sko!2skr!4v1679454944293!5m2!1sko!2skr" 
+width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</body>
+</html>
+<!-- 
+1. [구글 맵] 검색 
+2. https://www.google.co.kr/maps/?hl=ko
+3. 경복궁 검색 
+4. 상단왼쪽 三 클릭
+5. 지도 공유 또는 퍼가기
+6. 지도 
+ -->

@@ -126,7 +126,7 @@ function checkId(){
 	if(id == "") 
 		document.getElementById("idDiv").innerHTML = "<font color='magenta'>먼저 아이디를 입력하세요</font>";
 	else
-		window.open("/mvcMember/member/check.do?id="+id, "checkId", "width=500 height=150 left=900 top=200")
+		window.open("/mvcMember/member/checkId.do?id="+id, "checkId", "width=500 height=150 left=900 top=200")
 }
 </script>
 </body>

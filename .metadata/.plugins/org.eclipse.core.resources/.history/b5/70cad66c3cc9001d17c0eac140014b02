@@ -1,0 +1,2 @@
+/board/boardWirteForm.do=board.service.BoardWriteFormService
+/board/boardWrite.do=board.service.BoardWriteFormService

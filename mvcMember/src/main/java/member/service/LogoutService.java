@@ -14,7 +14,8 @@ public class LogoutService implements CommandProcess {
 		session.removeAttribute("memName");
 		session.removeAttribute("memId");
 					
-		session.invalidate(); //무효화
+		session.invalidate();//무효화
+		
 		return "/member/logout.jsp";
 	}
 

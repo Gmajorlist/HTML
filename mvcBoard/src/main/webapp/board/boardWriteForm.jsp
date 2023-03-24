@@ -15,9 +15,7 @@ div{
 </head>
 <body>
 <form name="boardWriteForm" method="post" action="/mvcBoard/board/boardWrite.do">
-	<h3>
-	 글쓰기
-	</h3>
+	<h3>글쓰기</h3>
 	<table border="1" cellpadding="5" cellspacing="0">
 		<tr>
 			<th>제목</th>

@@ -10,7 +10,6 @@ import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.annotation.Resource;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -27,7 +26,7 @@ public class MemberDAO {
 	private static MemberDAO memberDAO = new MemberDAO();
 	private SqlSessionFactory sqlSessionFactory;
 	
-	
+		
 	public static MemberDAO getInstance() {
 		return memberDAO;
 	}
@@ -39,8 +38,7 @@ public class MemberDAO {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
-	}	
+	}
 	
 	public MemberDTO memberLogin(Map map) {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
@@ -49,65 +47,58 @@ public class MemberDAO {
 		return memberDTO;
 	}
 	
-	
 	public int memberWrite(MemberDTO memberDTO) {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
-		 int su = sqlSession.insert("memberSQL.memberWrite",memberDTO);
-		 sqlSession.commit();
-		 sqlSession.close();
-		 return su;
-		 
-	}	 
-	public boolean isExistId(String id) { //checkId 로 연결
+		int su = sqlSession.insert("memberSQL.memberWrite", memberDTO);
+		sqlSession.commit();
+		sqlSession.close();
+		return su;
+	}
+	
+	public boolean isExistId(String id) {
 		boolean existId = false;
 		SqlSession sqlSession = sqlSessionFactory.openSession();
-		MemberDTO memberDTO = sqlSession.selectOne("memberSQL.isExistId",id);
-		if(memberDTO != null) {
-			existId = true;
-		}
+		MemberDTO memberDTO = sqlSession.selectOne("memberSQL.isExistId", id);
+		if(memberDTO != null) existId = true;
 		sqlSession.close();
-		
 		return existId;
 	}
+	
 	public MemberDTO getMember(String id) {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
-		MemberDTO memberDTO = sqlSession.selectOne("memberSQL.getMember",id);
+		MemberDTO memberDTO = sqlSession.selectOne("memberSQL.getMember", id);
 		sqlSession.close();
 		return memberDTO;
-		
 	}
+	
 	public void memberUpdate(MemberDTO memberDTO) {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
-		sqlSession.update("memberSQL.memberUpdate",memberDTO);
+		sqlSession.update("memberSQL.memberUpdate", memberDTO);
 		sqlSession.commit();
 		sqlSession.close();
 	}
-
-
-
+	
 	public boolean isExistPwd(String id, String pwd){
 		SqlSession sqlSession = sqlSessionFactory.openSession();
-		Map<String,String>map = new HashMap<String, String>();
+		boolean exist = false;
+		
+		Map<String, String> map = new HashMap<String, String>();
 		map.put("id", id);
 		map.put("pwd", pwd);
-		MemberDTO memberDTO = sqlSession.selectOne("memberSQL.isExistPwd",map);
+		MemberDTO memberDTO = sqlSession.selectOne("memberSQL.isExistPwd", map);
 		
-		boolean exist = false;
 		if(memberDTO != null) exist = true;
-	
+		
 		sqlSession.close();
 		return exist;
 	}
 	
 	public void memberDelete(String id) {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
-		sqlSession.delete("memberSQL.memberDelete",id);
+		sqlSession.delete("memberSQL.memberDelete", id);
 		sqlSession.commit();
 		sqlSession.close();
 	}
-	
-
-
 }
 
 

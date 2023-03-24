@@ -1,0 +1,5 @@
+1679556574295	Move 'member' to 'webapp'
+1679556577409	Move 'js' to 'webapp'
+1679556579323	Move 'sql' to 'webapp'
+1679559194461	Rename package 'mamber.Service'
+1679564152380	Rename package 'member.Service'

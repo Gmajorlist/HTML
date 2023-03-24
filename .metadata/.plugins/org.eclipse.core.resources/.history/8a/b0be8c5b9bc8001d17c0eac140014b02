@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="wrap">
+	<div id="header" style="background-color:#0080FF;">
+		<h1 class="logo"><a href="#">Dream Jeju</a></h1>
+	
+		<div id="menu">	
+		<ul class="topnav">
+			<li><a href="#">단체 여행</a></li>
+			<li><a href="#">맞춤 여행</a></li>
+			<li><a href="#">갤러리</a></li>
+			<li><a href="#">문의하기</a></li>
+	
+		</div>			
+		</ul>
+	</div><!-- //header -->
+
+	<hr>
+
+			
+		</div>
+	</div>
+	<hr>
+	
+	<div id="footer">
+		<dl class="btmnav">
+		
+		</dl>
+	
+		<p class="copy">
+			
+		</p>
+	</div>  
+</div>
+</body>
+</html>
+
+<!-- 
+
+dl 설명 목록
+dt 용어
+dd 설명
+
+ -->
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

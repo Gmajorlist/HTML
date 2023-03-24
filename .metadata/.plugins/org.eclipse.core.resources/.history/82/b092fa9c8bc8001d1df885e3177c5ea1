@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="main.css">
+</head>
+<body>
+<dl class="skip">
+	<dt class="blind">skip navigation</dt>
+	<dd><a href="#content">skip to content</a>
+</dl><!--//skip  -->
+<hr>
+
+<div id="wrap">
+	<div id="header">
+		<h1 class="logo"><a href="#">Dream Jeju</a></h1>
+		
+		<dl class="topnav">
+			<dt class="blind">top navigation</dt>
+			<dd><a href="#"></a></dd>
+			<dd><a href="#"></a></dd>
+			<dd><a href="#"></a></dd>
+		</dl>
+		
+		<h2 class="blind">main navigation</h2>
+		<ul class="mainnav">
+			<li><a href="#">단체 여행</a></li>
+			<li><a href="#">맞춤 여행</a></li>
+			<li><a href="#">갤러리</a></li>
+			<li><a href="#">문의하기</a></li>
+		</ul>
+	</div><!-- //header -->
+	<hr>
+	
+	
+	<div id="container">
+		<div class="snb">
+			<h2>About</h2>
+			<ul>
+				<li><a href="#">Company Info</a></li>
+				<li><a href="#">History</a></li>
+				<li><a href="#">Location</a></li>
+			</ul>
+		</div> //snb 
+		<hr>
+		
+		<div id="content">
+			<p class="locate">
+				<a href="#">Home</a>
+				<a href="#">About</a>
+				<a href="#">Company Info</a>
+			</p>	
+			
+			<h2>Company Info</h2>
+			<p class="thum">
+				<img src="../img/treethum.png" alt="ss">
+			</p>
+			
+			
+		</div>//content 
+	</div>//container 
+	<hr>
+	
+	<div id="footer">
+		<dl class="btmnav">
+			<dt>bottom navigation</dt>
+			<dd><a href="#">About</a></dd>
+			<dd><a href="#">Service</a></dd>
+			<dd><a href="#">Porfolio</a></dd>
+			<dd><a href="#">Contact</a></dd>
+			<dd><a href="#">Location</a></dd>
+		</dl>
+	
+		<p class="copy">
+			Copyright &copy; COMPANY Design<br>
+			Powered by Webazit, e-mail : webmaster@company.com
+		</p>
+	</div>//footer 
+</div>//wrap  -->
+</body>
+</html>
+
+<!-- 
+
+dl 설명 목록
+dt 용어
+dd 설명
+
+ -->
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

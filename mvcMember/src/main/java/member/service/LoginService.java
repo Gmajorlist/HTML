@@ -28,18 +28,29 @@ public class LoginService implements CommandProcess {
 		map.put("pwd", pwd);
 		MemberDTO memberDTO = memberDAO.memberLogin(map);
 		
-		
 		//응답
 		if(memberDTO == null) {
 			return "/member/loginFail.jsp";
 		}else {
-			HttpSession session = request.getSession();//세션 생성
-			session.setAttribute("memberName", memberDTO.getName());
-			session.setAttribute("memberId", id);
-			session.setAttribute("memberpwd", pwd);
-			session.setAttribute("memberEmail", memberDTO.getEmail1()+"@"+memberDTO.getEmail2());
-		return  "/member/loginOk.jsp";
+			HttpSession session = request.getSession(); //세션 생성
+			session.setAttribute("memName", memberDTO.getName());
+			session.setAttribute("memId", id);
+			session.setAttribute("memPwd", pwd);
+			session.setAttribute("memEmail", memberDTO.getEmail1()+"@"+memberDTO.getEmail2());
+			
+			return "/member/loginOk.jsp";
 		}
+	
 	}
 
 }
+
+
+
+
+
+
+
+
+
+

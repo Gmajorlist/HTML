@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<script type="text/javascript">
+// var는 전역변수
+var a = 100;
+a = 250;
+console.log(a)
+
+
+
+</script>
+</body>
+</html>
