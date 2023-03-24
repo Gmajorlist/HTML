@@ -6,7 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-    
+<body onload="autoNo()">
+    <p>
+        고객님의 인증번호는 <strong id="auth">00000</strong>입니다.
+    </p>
+
+    <input type="button" value="인증번호 새로 받기" onclick="refresh()"/>
+    <input type="button" value="네이버로 이동하기" onclick="goNaver()"/>
+
+    <script type="text/javascript">
+        function random(x, y){
+            return Math.floor(Math.random() * (y-x+1) + x); //난수 발생
+        }
+        function autoNo(){
+            var value = " " ;
+            for(i=1; i<=5; i++){
+                value += random(0,9);
+            }//for
+            document.getElementById("auth").innerText = value;
+        }
+        function refresh(){//나중에 글 수정할때 초기화 시킬때 reload
+            location.reload();//새로고침처럼 현재 리소스를 다시불러온다.
+        }
+        function goNaver(){
+            if(confirm("정말로 네이버로 이동하시겠습니까?"))
+             location.href="https://www.naver.com";
+        }
+    </script>
 </body>
 </html>
