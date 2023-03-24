@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+    //배열
+   // var myArray1 = new Array("홍길동","자바스크립트", "학생"); //내장객체
+    var myArray1 = ["홍길동","자바스크립트", "학생"];  //둘중하나쓰세요
+    document.write(myArray1[0] + "<br>");
+    document.write(myArray1[1] + "<br>");
+    document.write(myArray1[2] + "<br>");
+    document.write("<hr>");
+
+    myArray1[0] = "HongGilDong"
+    myArray1[1] = "Javascript"
+    myArray1[2] = "Student"
+    document.write(myArray1[0] + "<br>");
+    document.write(myArray1[1] + "<br>");
+    document.write(myArray1[2] + "<br>");
+    document.write("<hr>");
+
+    // 빈 배열 생성
+    //var myArray2 = new Array(); 
+    var myArray2 = []   //둘줄 하나만 선택
+
+    for(var i=0; i<10; i++){ //편한대로 데이터주는대로 줘서 할수있음
+        myArray2[i] = i + 1;
+    }
+
+    document.write("배열 길이 : " +myArray2.length + "<br>");
+    for (var i=0; i<myArray2.length; i++){
+        document.write(myArray2[i] + " ");
+    }
+</script>
+</body>
+</html>
