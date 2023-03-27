@@ -7,6 +7,18 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <h1 id="hello"></h1>
+    <p id="text">안녕하세요 제이쿼리!!</p>
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            var h1 = $('#hello');
+            h1.css('color', 'red');
+            h1.html('Hello jQuery');
+
+            alert($('#text').text()) // id에 text을 가져오기
+        }); //자바스크립트에 onload와 같은 역할입니다.
+    </script>
 </body>
 </html>
