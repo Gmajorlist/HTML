@@ -7,7 +7,24 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <h1 id="hello"></h1>
+    <!-- <script type="text/javascript" src="../jquery-3.6.4.min.js"></script> -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <!-- cdm 방식 -->
+    <script type="text/javascript">
+        function hello(){
+            var h1 = document.getElementById('hello')
+            //alert(h1.tagName) // tagname을 빼면 객체 값으로 된다
+            h1.innerHTML = 'Hello jQurey';
+            //h1.innerText = 'Hello jQurey';
+        }
+        // window.onload=function(){
+        //     hello();
+        // }
+        //javascript의 onload 이벤트와 같은 효과를 낼게
+        jQuery(hello);
+
+    </script>
 </body>
 </html>
 

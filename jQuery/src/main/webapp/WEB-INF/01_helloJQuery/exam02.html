@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="hello"></h1>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script type="text/javascript">
+        function hello($){
+           // var h1 = document.getElementById('hello')
+           var h1 = $('#hello')  //위에랑 동일 
+
+           //h1.innerHTML = 'Hello jQurey';
+           h1.html('Hello jQuery') //위에랑 동일 소스코드가 간결해짐
+
+          // h1.innerText = 'Hello jQurey';
+           h1.text('Hello jQuery') // 위랑 동일 
+        }
+
+
+
+        jQuery(hello);
+    </script>
+</body>
+</html>
