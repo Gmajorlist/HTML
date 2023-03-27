@@ -23,7 +23,7 @@ $(function(){
             alert("성별을 입력하세여");
             // radio는 배열로 받는다.
            // $('inut[name="gender"]:eq(1').attr('checked', true); 둘중 하나 선택 속성을문자로
-            $('inut[name="gender"]:eq(1').prop('checked', true); //값으로 취급
+            $('inut[name="gender"]:eq(1)').prop('checked', true); //값으로 취급
             
             return false;
         }
