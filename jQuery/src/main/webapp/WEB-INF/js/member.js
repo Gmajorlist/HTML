@@ -1,21 +1,21 @@
 $(function(){
     $('#join').submit(function(){
-        var user_id = $('input[name-"user_id"]').val();
+        var user_id = $('input[name="user_id"]').val();
         if(!user_id){
             alert("아이디를 입력핫요.");
-            $('input[name=user_id]').focus();
+            $('input[name="user_id"]').focus();
             return false;
         }
         var user_pw = $('input[name="user_pw"]').val();
         if(!user_pw){
             alert("비밀번호를 입력핫요.");
-            $('input[name=user_pw]').focus();
+            $('input[name="user_pw"]').focus();
             return false;
         }
         var juminno = $('input[name="juminno"]').val();
         if(!juminno){
             alert("주민번호를 입력핫요.");
-            $('input[name=juminno]').focus();
+            $('input[name="juminno"]').focus();
             return false;
         }
 
@@ -31,21 +31,21 @@ $(function(){
         var email = $('input[name="email"]').val();
         if(!email){
             alert("이메일을 입력핫요.");
-            $('input[name=email]').focus();
+            $('input[name="email"]').focus();
             return false;
         }
 
         var url = $('input[name="url"]').val();
         if(!url){
             alert("url를 입력핫요.");
-            $('input[name=url]').focus();
+            $('input[name="url"]').focus();
             return false;
         }
 
         var hpno = $('input[name="hpno"]').val();
         if(!hpno){
             alert("hpno 입력핫요.");
-            $('input[name=hpno]').focus();
+            $('input[name="hpno"]').focus();
             return false;
         }
 
