@@ -7,6 +7,21 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <h1>속성제어</h1>
+    <p>클릭하세요</p>
+    <img src="../img/vlvlan.png" width="500" height="300"/>
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script type="text/javascript"> 
+    $(function(){
+        var index = 1;
+
+        $('img').click(function(){
+            index = (index % 4) + 1;
+
+            $(this).attr('src', '../img/'+index+'.png');
+        });
+    });
+    </script>
 </body>
 </html>
