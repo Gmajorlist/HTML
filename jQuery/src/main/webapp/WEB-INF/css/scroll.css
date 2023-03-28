@@ -10,9 +10,9 @@ div {
 
 .gradientStyle {
 	/* IE */
-	background-image: -ms-linear-gradient(top, #1E5799 0%, #FFFFFF 100%);
+	background-image: -ms-linear-gradient( right, #1E5799 30%, #FFFFFF 100%);
 	/* Chrome */
-	background-image: -webkit-linear-gradient(top, #1E5799 0%, #FFFFFF 100%);
+	background-image: -webkit-linear-gradient(bottom right, #1E5799 30%, #FFFFFF 100%);
 }
 
 #console {
