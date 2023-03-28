@@ -8,10 +8,31 @@
     <link rel="stylesheet" href="../css/event.css">
 </head>
 <body>
+    <h1>회원 가입</h1>
+    <form name="form1" action="form_ok.html">
+        <div id="input">
+            <h3>당신의 이름은 무엇</h3>
+            <input type="text" name="user_name"/>
+            <input type="submit" value="저장하기" class="myButton"/>
+            <input type="reset" value="다시저장" class="myButton"/>
+        </div>
+    </form>
     <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script type="text/javascript"> 
-    $(function(){});
+    $(function(){
+        $('form[name="form1"]').submit(function(){
+            if( !confirm('정말 저장할거야?') ){
+                return false;
+            }
+        });
+
+        $('input[type="reset"]').click(function(){
+            if( !confirm('정말 취소할거야?') ){
+                return false;
+            }
+        });
+    });
     </script>
-   
 </body>
 </html>
+<!-- form_ok.html 이동-->
