@@ -12,14 +12,22 @@
     <div id="input">
         Click or Double Click Here~@@
     </div>
-    
+
     <h2>결과</h2>
     <div id="result">
     </div>
 
     <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script type="text/javascript"> 
-    $(function(){});
+    $(function(){
+        $('#input').click(function(){
+            $('result').html("Click Event");
+        });
+            
+        $('#input').dbclick(function(){
+            $('result').html("Double Click Event");
+        });
+        });
     </script>
 </body>
 </html>
