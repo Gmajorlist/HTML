@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper
-PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-"https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="memberSQL">
-
 	<!-- 로그인 -->
 	<select id="memberLogin" parameterType="java.util.Map" resultType="member">
 		select * from member where id=#{id} and pwd=#{pwd}
 	</select>
 	
-	<!-- 회원가입 -->																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																
+	<!-- 회원가입 -->
 	<insert id="memberWrite" parameterType="member">
 		insert into member values(#{name}
 								, #{id}
@@ -24,7 +23,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 								, #{addr1}
 								, #{addr2}
 								, sysdate)
-		
 	</insert>
 	
 	<!-- 중복 아이디 체크 -->
@@ -32,26 +30,26 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from member where id=#{id}
 	</select>
 	
-	<!-- 한 사람의 데이터를 가져오기 -->
+	<!-- 1사람의 데이터 가져오기 -->
 	<select id="getMember" parameterType="String" resultType="member">
 		select * from member where id=#{id}
 	</select>
 	
-	<!-- 회원정보 수정 -->
-	<update id="memberUpdate" parameterType="String">
+	<!-- 회원정보수정 -->
+	<update id="memberUpdate" parameterType="member">
 		update member set name=#{name}
-						     , pwd=#{pwd}
-						     , gender=#{gender}
-						     , email1=#{email1}
-						     , email2=#{email2}
-						     , tel1=#{tel1}
-						     , tel2=#{tel2}
-						     , tel3=#{tel3}
-						     , zipcode=#{zipcode}
-						     , addr1=#{addr1}
-						     , addr2=#{addr2}
-						     , logtime=sysdate
-						    where id=#{id}
+					 	, pwd=#{pwd}
+					 	, gender=#{gender}
+					   	, email1=#{email1}
+					   	, email2=#{email2}
+					   	, tel1=#{tel1}
+					   	, tel2=#{tel2}
+					   	, tel3=#{tel3}
+					   	, zipcode=#{zipcode}
+					   	, addr1=#{addr1}
+					   	, addr2=#{addr2}
+					   	, logtime=sysdate
+					   where id=#{id}
 	</update>
 	
 	<!-- 비밀번호 맞는지 확인 -->
