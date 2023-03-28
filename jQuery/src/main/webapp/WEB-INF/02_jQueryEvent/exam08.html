@@ -18,7 +18,18 @@
 
     <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script type="text/javascript"> 
-     $(function(){});
+     $(function(){
+        //페이지가 열리면 자동으로 포커스 설정
+        $('#input > input[type="text"]').focus();
+
+        $('#input > input[type="text"]').focus(function(){
+            $('#result').html('포커스가 들어갔습니다.');
+        });
+
+        $('#input > input[type="text"]').blur(function(){
+            $('#result').html('포커스가 나왔습니다.');
+        });
+     });
  </script>
 </body>
 </html>
