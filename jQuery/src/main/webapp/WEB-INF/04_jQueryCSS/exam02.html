@@ -45,10 +45,10 @@
             $(this).css('background-image', 'none');
         });
 
-        $().blur(function(){
+        $('#id, #pw').blur(function(){
             if($(this).val())
                 $(this).css('background-image', 'none');
-            else    
+            else
                 $(this).css('background-image', 'url(../img/input.png)');
         });
     });
