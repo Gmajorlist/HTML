@@ -5,24 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style type="text/css">
+        div {
+            width: 400px;
+            height: 300px;
+            padding-top: 20px;
+            background-size: 100% 100%;
+        }
+        ul {
+            padding: 10px 20px;
+            background-color: rgba(255, 255, 255, 0.6)  /* 0.6투명도 */
+        }
+    </style>
 </head>
 <body>
     <div>
         <ul id="menu">
             <li class="item">
-                <a href="#">../img/1.jpg</a>
+                <a href="#">../img/1.jpg</a>  <!-- 1 번 -->
             </li>
             <li class="item">
-                <a href="#">../img/2.jpg</a>
+                <a href="#">../img/2.jpg</a> <!-- 2 번 -->
             </li>
             <li class="item">
-                <a href="#">../img/3.jpg</a>
+                <a href="#">../img/3.jpg</a> <!-- 3 번 -->
             </li>
         </ul>
     </div>
     <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script type="text/javascript"> 
-    $(function(){});
+    $(function(){
+        $('.item > a').click(function(){
+            var index = $(this).parent().index();
+            console.log('index = ' + index)
+
+            var image = ['../img/1.jpg', '../img/2.jpg', '../img/3.jpg'];
+
+            $(this).parents('div').css({//parents<< 조상님들 에서 () 여기에 넣으면댐
+                'background-image' : 'url(' + image[index] + ')'
+            });
+        });
+    });
     </script>
 
 </body>
