@@ -24,10 +24,25 @@
         });
         $('#sh > input:eq(1)').click(function(){
             $('#sh img').hide(200); //자식      //후손으로하면 #sh img로 해도 된다 둘중 하나 방법을써라
+       
         });
         $('#sh > input:eq(2)').click(function(){
             $('#sh img').toggle(200); //자식      //후손으로하면 #sh img로 해도 된다 둘중 하나 방법을써라
+       
         });
+        //답
+        $('#sh > input').click(function(){
+            console.log('this = ' + this);
+            console.log('$(this) = ' + $(this));
+
+            //클릭한 버틀을 제외한 모든 버튼 class 속성을 제거
+            $('#sh > input').not(this).removeClass('btn');
+            
+            //클릭한 버튼에 class 속성 부여
+            $(this).addClass('btn');
+        }); 
+
+        
     });
     </script>
    
@@ -36,4 +51,20 @@
 <!--
 [문제] 클릭할 때마다 버튼의 색깔을 cyan으로 바꾸고 나머지는 원래의 색으로 바뀌게 하시오.
 
+
+* this와 $(this)의 차이
+$('#sh > input').not(this).removeClass('btn');
+
+=> this는 자바스크립트이고 $(this) 제이쿼리 문법이다.
+=> this의 경우 해당 이벤트가 발생한 요소를 표시해주고
+   $(this)는 이벤트가 발생하면 발생한 태그를 Object로 보여준다는게 다른점이다.
+=> this  === $(this)[0]
+
+[결과] console.log()로 출력한 결과
+<input type="button"  value="보이기" class="btn">      //console.log(this); 결과
+
+▼ S.fn.init [input]         //console.log($(this)); 결과
+   ▶ 0: input.btn
+     length: 1
+   ▶ [[Prototype]]: Object(0
 -->
