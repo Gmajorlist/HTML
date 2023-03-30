@@ -46,49 +46,61 @@ div#glayLayer {
 
     <ul>
         <li>
-            <a href="../img/photo1.jpg" class="madal">
+            <a href="../img/photo1.jpg" class="modal">
                 <img src="../img/photo1_thum.jpg" alt="샹디르에"/>
             </a>
         </li>
         <li>
-            <a href="../img/photo2.jpg" class="madal">
+            <a href="../img/photo2.jpg" class="modal">
                 <img src="../img/photo2_thum.jpg" alt="장미"/>
             </a>
         </li>
         <li>
-            <a href="../img/photo3.jpg" class="madal">
+            <a href="../img/photo3.jpg" class="modal">
                 <img src="../img/photo3_thum.jpg" alt="바다"/>
             </a>
         </li>
         <li>
-            <a href="../img/photo4.jpg" class="madal">
+            <a href="../img/photo4.jpg" class="modal">
                 <img src="../img/photo4_thum.jpg" alt="문"/>
             </a>
         </li>
         <li>
-            <a href="../img/photo5.jpg" class="madal">
+            <a href="../img/photo5.jpg" class="modal">
                 <img src="../img/photo5_thum.jpg" alt="바다"/>
             </a>
         </li>
         <li>
-            <a href="../img/photo6.jpg" class="madal">
+            <a href="../img/photo6.jpg" class="modal">
                 <img src="../img/photo6_thum.jpg" alt="꽃"/>
             </a>
         </li>
         <li>
-            <a href="../img/photo7.jpg" class="madal">
+            <a href="../img/photo7.jpg" class="modal">
                 <img src="../img/photo7_thum.jpg" alt="하늘"/>
             </a>
         </li>
         <li>
-            <a href="../img/photo8.jpg" class="madal">
+            <a href="../img/photo8.jpg" class="modal">
                 <img src="../img/photo8_thum.jpg" alt="건물"/>
             </a>
         </li>
     </ul>
     <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script type="text/javascript"> 
-    $(function(){});
+    $(function(){
+        $('a.modal').click(function(){
+            $('#glayLayer').fadeIn(300);
+            $('#overLayer').fadeIn(300);
+
+            $('#overLayer').html('<img src="' + $(this).attr('href') + '" />');
+            return false;
+        });
+        $('#glayLayer').click(function(){
+            $(this).fadeOut(300);
+            $('#overLayer').fadeOut(300);
+        });
+    });
     </script>
 </body>
 </html>
