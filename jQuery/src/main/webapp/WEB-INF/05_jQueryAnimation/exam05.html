@@ -57,7 +57,8 @@
         $('button:eq(2)').click(function(){
             // JSON 형식의 CSS 속성을 여러 개 나열할 수 있으며
             // CSS 속성을 제외한 나머지 파라미터들은 생략이 가능하다
-            $('#box').animate({
+            $('div').animate({ //첫번째 div는 기본이 position: static; 이므로 빨강 div는 left 무시
+            //$('#box').animate({ //빨강 div는 움직이지않음
                 'left': '250px',
                 'width': '150px',
                 'height': '150px',
@@ -66,7 +67,8 @@
         
         //좌측으로부터 50px 이동하고, 높이와 너비를 50px씩 크게하기
         $('button:eq(3)').click(function(){
-            $('#box').animate({
+            $('div').animate({
+            //$('#box').animate({
                 'left': '+=50px',
                 'width': '+=50px',
                 'height': '+=50px',
