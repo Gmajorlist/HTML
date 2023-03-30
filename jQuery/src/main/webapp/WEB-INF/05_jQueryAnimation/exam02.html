@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>show/hide</h1>
+    <div id="sh">
+        <input type="button" class="btn" value="보이기"/>
+        <input type="button"  value="숨기기"/>
+        <input type="button"  value="토글"/>
+        <div>
+            <img src="../img/1.jpg" width="500px" height="300px"/>
+        </div>
+    </div>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script type="text/javascript"> 
+    $(function(){
+        $('#sh > input:eq(0)').click(function(){
+            $('#sh > div > img').show(200); //자식      //후손으로하면 #sh img로 해도 된다 둘중 하나 방법을써라
+        });
+        $('#sh > input:eq(1)').click(function(){
+            $('#sh img').hide(200); //자식      //후손으로하면 #sh img로 해도 된다 둘중 하나 방법을써라
+        });
+        $('#sh > input:eq(2)').click(function(){
+            $('#sh img').toggle(200); //자식      //후손으로하면 #sh img로 해도 된다 둘중 하나 방법을써라
+        });
+    });
+    </script>
+   
+</body>
+</html>
+<!--
+[문제] 클릭할 때마다 버튼의 색깔을 cyan으로 바꾸고 나머지는 원래의 색으로 바뀌게 하시오.
+
+-->
