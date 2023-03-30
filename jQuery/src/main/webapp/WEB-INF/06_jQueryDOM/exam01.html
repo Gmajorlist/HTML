@@ -27,7 +27,20 @@
     
     <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script type="text/javascript"> 
-    $(function(){});
+    $(function(){
+        $('td:eq(4)').css('background', '#ff0000');
+        $('td').eq(2).css('background', '#ff0000'); //이렇게 써도된다
+
+        $('td:eq(4)').prev().css('background', '#0000ff'); //이전 
+        $('td:eq(4)').next().css('background', '#00ff00'); //다음
+
+        $('td:eq(4)').parent().css('color', '#ffffff');  //color 하면 글씨색바껴
+        $('td:eq(4)').parent().next().css('color', '#ff0000');  
+        $('td:eq(4)').parent().prev().css('color', '#0000ff');
+        
+        $('td:eq(4)').parent().next().children().css('text-decoration', 'underline');
+        $('td:eq(4)').parent().next().children().eq(1).css('font-weight', 'bold'); // DOM 트리구조를 보고 그려
+    });
     </script>
 
 </body>
