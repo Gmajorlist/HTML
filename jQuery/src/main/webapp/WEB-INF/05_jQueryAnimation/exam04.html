@@ -11,7 +11,7 @@
             margin: 0;
             list-style: none; 
             width: 100px;
-            float: left;
+             float: left;  /*왼쪽정렬 */
 }
         #thumb li {
             padding: 5px 10px;
@@ -45,10 +45,50 @@
         </li>
     </ul>
     <div id="view"><img src="../img/1.jpg"/></div>
+
     <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script type="text/javascript"> 
-    $(function(){});
+    $(function(){ //ep(0) <<몇번째다 이렇게 잡아주는거
+        $('.item:ep(0)').click(function(){
+            var image = $(this).attr('href');
+
+            $('#view').hide(500, function(){
+                $('#view img').attr('src', image);
+                $(this).show(300);
+            });
+
+            return false;
+        });
+
+        $('.item:ep(1)').click(function(){
+            var image = $(this).attr('href');
+
+            $('#view').hide(500, function(){
+                $('#view img').attr('src', image);
+                $(this).show(300);
+            });
+
+            return false;
+        });
+
+        $('.item:ep(2)').click(function(){
+            var image = $(this).attr('href');
+
+            $('#view').hide(500, function(){
+                $('#view img').attr('src', image);
+                $(this).show(300);
+            });
+
+            return false;
+        });
+    });
     </script>
 
 </body>
 </html>
+<!-- 
+- 모든 애니메이션 관련 함수들은 시간값 외에 두 번째 파라미터로 함수를 지정할 수 있다.
+- 이 함수들에 애니메이션 처리가 종료된 후에 동작할 내용을 담는다.
+
+예) show(time [, function() {......}]);
+ -->
