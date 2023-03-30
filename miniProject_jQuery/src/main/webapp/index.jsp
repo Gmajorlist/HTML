@@ -29,7 +29,7 @@ html {
 #container {
    margin: auto;
    width: 1100px;
-   height: 500px;
+   /* height: 500px; */
 }
 
 #container:after {
@@ -72,7 +72,7 @@ html {
 	<div id="container">
 		<div id="nav">
 			<jsp:include page="./main/nav.jsp"></jsp:include>
-		</div>
+		</div>+
 		<div id="section">
 			<h3>
 				<c:if test="${empty display }"> <!-- display == null이라고 쓰면 절대 안된다. --><!-- empty display: 값이 비었냐? -->
