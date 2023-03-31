@@ -76,4 +76,32 @@ public class BoardDAO {
 	    
 	    return -1; // DB 오류
 	}
+
+	public void boardReply(Map<String, String> map) {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		//원글
+		BoardDTO boardDTO = sqlSession.selectOne("boardSQL.getBoard", map.get("pseq"));
+		
+		//step update
+		//update board set step=step+1 where ref=원글ref and step>원글step
+		sqlSession.update("boardSQL.boardReply1", boardDTO);
+		
+		//insert
+		//답글 ref = 원글ref
+		//답글 lev = 원글lev +1
+		//답글 step = 원글step +1
+		//map에는 id name email subject content pseq를 담아왔다 추가로 ref lev step 넣엇다.
+		map.put("ref", boardDTO.getRef()+"");
+		map.put("lev", boardDTO.getLev()+1+"");
+		map.put("step", boardDTO.getStep()+1+"");
+		sqlSession.insert("boardSQL.boardReply2", map);
+		//reply update
+		
+		//update baord set reply=reply+1 where seq=원글번호
+		sqlSession.update("boardSQl.boardReply3", boardDTO.getSeq());
+		
+		sqlSession.commit();
+		sqlSession.close();
+		
+	}
 }

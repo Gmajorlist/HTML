@@ -29,5 +29,11 @@ $(document).ready(function(){
 //글수정 폼
 $('#boardUpdateFormBtn').click(function(){
 	$('#boardViewForm'),attr('action', '/miniProject_jQuery/board/boardUpdateForm.do');
-	$('#boardViewForm').submit();
+	$('#boardViewForm').submit(); //seq, pg
+});
+
+//답글 쓰기 폼
+$('#boardReplyFormBtn').click(function(){
+	$('#boardViewForm'),attr('action', '/miniProject_jQuery/board/boardReplyForm.do');
+	$('#boardViewForm').submit(); //seq, pg 
 });

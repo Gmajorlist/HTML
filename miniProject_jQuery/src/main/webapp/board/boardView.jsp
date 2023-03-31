@@ -50,7 +50,6 @@
 		
 		<span id="boardViewSpan">
 			<input type="button" value="글수정" id="boardUpdateFormBtn">
-			
 			<input type="button" value="글삭제" id="boardDeleteBtn">
 			
 			<input type="button" value="답글" id="boardReplyFormBtn">
