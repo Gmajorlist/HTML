@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="추가">
+    <input type="button" value="전체삭제">
+
+    <!-- 동적 요소 -->
+    <ul></ul>
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(function () {
+            var i = 1;
+
+            //추가 버튼
+            $('input:eq(0)').click(function () {
+                var li1 = $('<li>').css('color', 'red').html('추가항목 ' + (i++));
+                var li2 = $('<li>').css('color', 'green').html('추가항목 ' + (i++));
+                var li3 = $('<li>').css('color', 'blue').html('추가항목 ' + (i++));
+
+                li1.appendTo($('ul'));
+                $('ul').append(li2);
+                $('ul').append(li3);
+
+                li1.click(function(){
+                    $(this).remove();
+                });
+
+                li2.click(function(){
+                    $(this).remove();
+                });
+
+                li3.click(function(){
+                    $(this).remove();
+                });
+            });
+
+            //전체삭제 버튼
+            $('input:eq(1)').click(function(){
+                $('ul').empty();
+                i = 1;
+            });
+        });
+    </script>
+</body>
+
+</html>
+
+<!-- 
+A.append(B)   -- A에 B를 추가하다.
+B.appendTo(A) -- B를 A에 추가하다.
+ -->
