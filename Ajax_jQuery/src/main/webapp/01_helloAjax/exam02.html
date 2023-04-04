@@ -18,7 +18,22 @@
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script type="text/javascript">
-    $(function(){});
+    $(function(){
+        $('mybtn').click(function(){
+            $.ajax({
+                type: 'get',
+                url: '../text/text02.txt',
+                dataType: 'text',
+                success: function(data){
+                    //$('#result').html(data);
+                    $('#result').append(data);
+                },
+                error: function(e){
+                    console.log(e);
+                }
+            });
+        });
+    });
 </script>
 </body>
 </html>
