@@ -25,7 +25,7 @@
                     dataType: 'xml', //서버로부터 받는 데이터 타입
                     success: function(data){
                         console.log(data);
-                        console.log($(data));
+                        console.log((data));
                         var title = $(data).find('title').text();
                         var time = $(data).find('time').text();
                         var teacher = $(data).find('teacher').text();
